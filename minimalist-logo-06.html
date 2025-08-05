@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=500, initial-scale=1.0">
+    <title>Minimalist Logo 6 - Grid System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; width: 500px; height: 500px; overflow: hidden; }
+        .logo-container {
+            width: 500px; height: 500px; position: relative; overflow: hidden;
+            background: linear-gradient(135deg, #333 0%, #2c2c2c 100%);
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 25px;
+        }
+        .logo-content {
+            text-align: center; position: relative; z-index: 2;
+        }
+        .grid-system {
+            width: 160px; height: 160px; margin: 0 auto 25px;
+            position: relative; display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            gap: 8px;
+        }
+        .grid-cell {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .grid-cell.active {
+            background: #d4af37;
+        }
+        .grid-cell:nth-child(1) { opacity: 0.3; }
+        .grid-cell:nth-child(2) { background: #d4af37; }
+        .grid-cell:nth-child(3) { background: #d4af37; }
+        .grid-cell:nth-child(4) { opacity: 0.3; }
+        .grid-cell:nth-child(5) { background: #d4af37; }
+        .grid-cell:nth-child(6) { opacity: 0.2; }
+        .grid-cell:nth-child(7) { opacity: 0.2; }
+        .grid-cell:nth-child(8) { background: #d4af37; }
+        .grid-cell:nth-child(9) { background: #d4af37; }
+        .grid-cell:nth-child(10) { background: #d4af37; }
+        .grid-cell:nth-child(11) { background: #d4af37; }
+        .grid-cell:nth-child(12) { background: #d4af37; }
+        .grid-cell:nth-child(13) { background: #d4af37; }
+        .grid-cell:nth-child(14) { opacity: 0.2; }
+        .grid-cell:nth-child(15) { opacity: 0.2; }
+        .grid-cell:nth-child(16) { background: #d4af37; }
+        
+        .brand-name {
+            font-family: 'Lato', sans-serif;
+            font-size: 22px; font-weight: 300; color: #fafafa;
+            letter-spacing: 8px; margin-bottom: 8px;
+            text-transform: lowercase;
+        }
+        .tagline {
+            font-family: 'Lato', sans-serif;
+            font-size: 8px; font-weight: 100; color: #d4af37;
+            letter-spacing: 3px; text-transform: lowercase;
+        }
+        .bottom-line {
+            width: 100px; height: 1px; background: rgba(212, 175, 55, 0.4);
+            margin: 15px auto 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo-content">
+            <div class="grid-system">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="brand-name">arty</div>
+            <div class="tagline">visual studio</div>
+            <div class="bottom-line"></div>
+        </div>
+    </div>
+</body>
+</html>

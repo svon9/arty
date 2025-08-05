@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=500, initial-scale=1.0">
+    <title>Minimalist Logo 2 - Circle Frame</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; width: 500px; height: 500px; overflow: hidden; }
+        .logo-container {
+            width: 500px; height: 500px; position: relative; overflow: hidden;
+            background: #fafafa;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 25px;
+        }
+        .logo-content {
+            text-align: center; position: relative; z-index: 2;
+        }
+        .circle-frame {
+            width: 200px; height: 200px; border: 2px solid #333;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; margin: 0 auto 25px;
+            position: relative;
+        }
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px; font-weight: 300; color: #333;
+            letter-spacing: 6px; text-transform: lowercase;
+        }
+        .tagline {
+            font-family: 'Lato', sans-serif;
+            font-size: 9px; font-weight: 100; color: #666;
+            letter-spacing: 2px; text-transform: lowercase;
+        }
+        .gold-accent {
+            position: absolute; top: -6px; left: 50%; transform: translateX(-50%);
+            width: 12px; height: 12px; background: #d4af37;
+            border-radius: 50%;
+        }
+        .gold-accent2 {
+            position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%);
+            width: 12px; height: 12px; background: #d4af37;
+            border-radius: 50%;
+        }
+        .outer-ring {
+            position: absolute; top: 80px; left: 80px; right: 80px; bottom: 80px;
+            border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 50%;
+        }
+        .minimal-dots {
+            position: absolute; top: 200px; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 6px;
+        }
+        .dot {
+            width: 2px; height: 2px; background: #d4af37;
+            border-radius: 50%; opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="outer-ring"></div>
+        <div class="logo-content">
+            <div class="circle-frame">
+                <div class="gold-accent"></div>
+                <div class="gold-accent2"></div>
+                <div class="brand-name">arty</div>
+            </div>
+            <div class="tagline">boudoir & fine art</div>
+            <div class="minimal-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

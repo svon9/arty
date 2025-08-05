@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Card Generator - 1080x1080</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Lato:wght@300;400;600&family=Dancing+Script:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .instagram-card {
+            width: 1080px;
+            height: 1080px;
+            position: relative;
+            border-radius: 0;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        /* Card 1: Godard Cinema Quote */
+        .card-godard {
+            background: linear-gradient(135deg, #2c1810 0%, #1a1a1a 50%, #8b4513 100%);
+            color: #f5f5f5;
+        }
+
+        /* Card 2: Wim Wenders Quote */
+        .card-wenders {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1a1a1a 100%);
+            color: #ffffff;
+        }
+
+        /* Card 3: French Phrase Card */
+        .card-french {
+            background: linear-gradient(135deg, #8b0000 0%, #2c1810 50%, #d4af37 100%);
+            color: #f5f5f5;
+        }
+
+        /* Card 4: Dostoevsky Card */
+        .card-dostoevsky {
+            background: linear-gradient(135deg, #000000 0%, #2c2c2c 50%, #d4af37 100%);
+            color: #ffffff;
+        }
+
+        /* Card 5: Art Philosophy */
+        .card-philosophy {
+            background: linear-gradient(135deg, #4a4a4a 0%, #2c1810 50%, #8b4513 100%);
+            color: #f5f5f5;
+        }
+
+        /* Card 6: Photography Heritage */
+        .card-heritage {
+            background: linear-gradient(135deg, #1a1a1a 0%, #3c3c3c 50%, #d4af37 100%);
+            color: #ffffff;
+        }
+
+        /* Card 7: European Elegance */
+        .card-elegance {
+            background: linear-gradient(135deg, #5c4033 0%, #8b6914 50%, #2c1810 100%);
+            color: #f5f5f5;
+        }
+
+        /* Card 8: Artistic Vision */
+        .card-vision {
+            background: linear-gradient(135deg, #2c2c54 0%, #40407a 50%, #706fd3 100%);
+            color: #ffffff;
+        }
+
+        .card-content {
+            padding: 100px 80px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            text-align: center;
+        }
+
+        .main-quote {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2rem;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 50px;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+        }
+
+        .quote-text:before {
+            content: '"';
+            font-size: 10rem;
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            opacity: 0.3;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quote-text:after {
+            content: '"';
+            font-size: 10rem;
+            position: absolute;
+            bottom: -80px;
+            right: -50px;
+            opacity: 0.3;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quote-author {
+            font-family: 'Lato', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #d4af37;
+            margin-bottom: 40px;
+        }
+
+        .french-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.8rem;
+            font-weight: 600;
+            color: #d4af37;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .english-translation {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.6rem;
+            font-style: italic;
+            opacity: 0.8;
+            margin-bottom: 50px;
+        }
+
+        .brand-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 50px;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+        }
+
+        .instagram-handle {
+            font-family: 'Lato', sans-serif;
+            font-size: 2.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .decorative-element {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 20rem;
+            font-family: 'Playfair Display', serif;
+            z-index: 0;
+        }
+
+        .card-godard .decorative-element {
+            bottom: -80px;
+            right: -80px;
+            transform: rotate(-15deg);
+        }
+
+        .card-wenders .decorative-element {
+            top: -80px;
+            left: -80px;
+            transform: rotate(15deg);
+        }
+
+        .card-french .decorative-element {
+            bottom: -50px;
+            left: -50px;
+            transform: rotate(-10deg);
+        }
+
+        .specialty-tag {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            background: rgba(212, 175, 55, 0.9);
+            color: #000;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card-french .quote-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5.8rem;
+        }
+
+        .card-dostoevsky .quote-text {
+            font-size: 3.8rem;
+            font-weight: 300;
+        }
+
+        .card-philosophy .quote-text {
+            font-size: 3.4rem;
+            line-height: 1.5;
+        }
+
+        .card-heritage .quote-text {
+            font-size: 3.2rem;
+            line-height: 1.6;
+        }
+
+        .artistic-accent {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            font-style: italic;
+            opacity: 0.7;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        /* Navigation for switching cards */
+        .card-switcher {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .card-switcher select {
+            padding: 10px;
+            font-size: 16px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 10px 20px;
+            background: #d4af37;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-switcher">
+        <select id="cardSelector">
+            <option value="godard">Godard Quote</option>
+            <option value="wenders">Wim Wenders Quote</option>
+            <option value="french">French Phrase</option>
+            <option value="dostoevsky">Dostoevsky Quote</option>
+            <option value="philosophy">Art Philosophy</option>
+            <option value="heritage">Photography Heritage</option>
+            <option value="elegance">European Elegance</option>
+            <option value="vision">Artistic Vision</option>
+        </select>
+    </div>
+
+    <button class="download-btn" onclick="downloadCard()">Download as PNG</button>
+
+    <!-- Card 1: Jean-Luc Godard Quote -->
+    <div class="instagram-card card-godard" id="card-godard">
+        <div class="card-content">
+            <div class="decorative-element">🎬</div>
+            <div class="specialty-tag">Cinema</div>
+            <div class="main-quote">
+                <div class="quote-text">Cinema is the most beautiful fraud in the world</div>
+                <div class="quote-author">— Jean-Luc Godard</div>
+                <div class="artistic-accent">Capturing truth through illusion</div>
+            </div>
+            <div class="brand-footer">
+                <div class="brand-name">ARTY</div>
+                <div class="instagram-handle">@Krish_Payn</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 2: Wim Wenders Quote -->
+    <div class="instagram-card card-wenders" id="card-wenders" style="display: none;">
+        <div class="card-content">
+            <div class="decorative-element">📸</div>
+            <div class="specialty-tag">Vision</div>
+            <div class="main-quote">
+                <div class="quote-text">Every image tells a story that words cannot express</div>
+                <div class="quote-author">— Wim Wenders</div>
+                <div class="artistic-accent">Visual poetry in motion</div>
+            </div>
+            <div class="brand-footer">
+                <div class="brand-name">ARTY</div>
+                <div class="instagram-handle">@Krish_Payn</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 3: French Phrase -->
+    <div class="instagram-card card-french" id="card-french" style="display: none;">
+        <div class="card-content">
+            <div class="decorative-element">✨</div>
+            <div class="specialty-tag">Français</div>
+            <div class="main-quote">
+                <div class="french-text">L'art de capturer l'âme</div>
+                <div class="english-translation">The art of capturing the soul</div>
+                <div class="artistic-accent">Boudoir photography redefined</div>
+            </div>
+            <div class="brand-footer">
+                <div class="brand-name">ARTY</div>
+                <div class="instagram-handle">@Krish_Payn</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 4: Dostoevsky Quote -->
+    <div class="instagram-card card-dostoevsky" id="card-dostoevsky" style="display: none;">
+        <div class="card-content">
+            <div class="decorative-element">♦</div>
+            <div class="specialty-tag">Beauty</div>
+            <div class="main-quote">
+                <div class="french-text">La beauté sauvera le monde</div>
+                <div class="english-translation">Beauty will save the world</div>
+                <div class="quote-author">— Dostoevsky</div>
+                <div class="artistic-accent">Timeless elegance captured</div>
+            </div>
+            <div class="brand-footer">
+                <div class="brand-name">ARTY</div>
+                <div class="instagram-handle">@Krish_Payn</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 5: Art Philosophy -->
+    <div class="instagram-card card-philosophy" id="card-philosophy" style="display: none;">
+        <div class="card-content">
+            <div class="decorative-element">🎭</div>
+            <div class="specialty-tag">Philosophy</div>
+            <div class="main-quote">
+                <div class="quote-text">Drawing inspiration from the great masters of photography</div>
+                <div class="artistic-accent">Edward Weston • Helmut Newton • Man Ray</div>
+                <div class="english-translation">Classical composition meets contemporary minimalism</div>
+            </div>
+            <div class="brand-footer">
+                <div class="brand-name">ARTY</div>
+                <div class="instagram-handle">@Krish_Payn</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 6: Photography Heritage -->
+    <div class="instagram-card card-heritage" id="card-heritage" style="display: none;">
+        <div class="card-content">
+            <div class="decorative-element">🏛️</div>
+            <div class="specialty-tag">Heritage</div>
+            <div class="main-quote">
+                <div class="quote-text">Photography is not just documentation, but poetry made visible</div>
+                <div class="artistic-accent">Julia Margaret Cameron • Man Ray</div>
+                <div class="english-translation">Rooted in fine art tradition</div>
+            </div>
+            <div class="brand-footer">
+                <div class="brand-name">ARTY</div>
+                <div class="instagram-handle">@Krish_Payn</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 7: European Elegance -->
+    <div class="instagram-card card-elegance" id="card-elegance" style="display: none;">
+        <div class="card-content">
+            <div class="decorative-element">👑</div>
+            <div class="specialty-tag">Elegance</div>
+            <div class="main-quote">
+                <div class="quote-text">Sophisticated European art cinema aesthetics</div>
+                <div class="french-text">Élégance intemporelle</div>
+                <div class="english-translation">Timeless elegance in every frame</div>
+            </div>
+            <div class="brand-footer">
+                <div class="brand-name">ARTY</div>
+                <div class="instagram-handle">@Krish_Payn</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 8: Artistic Vision -->
+    <div class="instagram-card card-vision" id="card-vision" style="display: none;">
+        <div class="card-content">
+            <div class="decorative-element">🌟</div>
+            <div class="specialty-tag">Vision</div>
+            <div class="main-quote">
+                <div class="quote-text">Creating images that are both timeless and thoroughly modern</div>
+                <div class="artistic-accent">Richard Avedon • Annie Leibovitz</div>
+                <div class="english-translation">Narrative storytelling through lens</div>
+            </div>
+            <div class="brand-footer">
+                <div class="brand-name">ARTY</div>
+                <div class="instagram-handle">@Krish_Payn</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cardSelector = document.getElementById('cardSelector');
+        const cards = document.querySelectorAll('.instagram-card');
+
+        cardSelector.addEventListener('change', function() {
+            // Hide all cards
+            cards.forEach(card => card.style.display = 'none');
+            
+            // Show selected card
+            const selectedCard = document.getElementById('card-' + this.value);
+            if (selectedCard) {
+                selectedCard.style.display = 'block';
+            }
+        });
+
+        function downloadCard() {
+            // Instructions for manual screenshot
+            alert(`To save this card as PNG:\n\n1. Right-click on the card\n2. Select "Inspect Element"\n3. Right-click on the card element in DevTools\n4. Select "Capture node screenshot"\n\nOr use browser screenshot tools to capture the 1080x1080 card area.`);
+        }
+
+        // Set initial card
+        cardSelector.value = 'godard';
+    </script>
+</body>
+</html>

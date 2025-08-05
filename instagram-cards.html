@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Post Cards - Arty Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .instagram-card {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            margin: 0 auto;
+        }
+
+        /* Card 1: Classic Boudoir */
+        .card-1 {
+            background: linear-gradient(135deg, #2c1810 0%, #8b4513 100%);
+            color: white;
+        }
+
+        /* Card 2: Luxury Fashion */
+        .card-2 {
+            background: linear-gradient(135deg, #1a1a1a 0%, #d4af37 100%);
+            color: white;
+        }
+
+        /* Card 3: Fine Art Nude */
+        .card-3 {
+            background: linear-gradient(135deg, #f8f8f8 0%, #e0e0e0 100%);
+            color: #333;
+        }
+
+        /* Card 4: Elite Experience */
+        .card-4 {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            color: #d4af37;
+        }
+
+        /* Card 5: Special Offer */
+        .card-5 {
+            background: linear-gradient(135deg, #8b0000 0%, #ff6b6b 100%);
+            color: white;
+        }
+
+        /* Card 6: Couples Package */
+        .card-6 {
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            color: white;
+        }
+
+        .card-content {
+            padding: 40px 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .card-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .price-tag {
+            font-size: 2.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            margin: 15px 0;
+        }
+
+        .price-range {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .features-list li {
+            padding: 3px 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .features-list li:before {
+            content: '✦ ';
+            margin-right: 8px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        .book-now {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: inherit;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .card-3 .book-now {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .instagram-handle {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            font-weight: 300;
+        }
+
+        .offer-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .card-4 .offer-badge {
+            background: #d4af37;
+            color: #000;
+        }
+
+        .decorative-element {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 6rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .card-1 .decorative-element {
+            bottom: -20px;
+            right: -20px;
+            transform: rotate(-15deg);
+        }
+
+        .card-2 .decorative-element {
+            top: -20px;
+            left: -20px;
+            transform: rotate(15deg);
+        }
+
+        .limited-time {
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .cards-container {
+                gap: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cards-container">
+        
+        <!-- Card 1: Classic Boudoir -->
+        <div class="instagram-card card-1">
+            <div class="card-content">
+                <div class="decorative-element">♦</div>
+                <div>
+                    <h2 class="card-title">Classic Boudoir</h2>
+                    <p class="card-subtitle">Intimate & Elegant Photography</p>
+                    <div class="price-tag">₹15K - ₹25K</div>
+                    <ul class="features-list">
+                        <li>2-hour intimate session</li>
+                        <li>Professional makeup consultation</li>
+                        <li>20+ edited high-res images</li>
+                        <li>Complimentary silk robe</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="book-now">Book Now</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Luxury Fashion -->
+        <div class="instagram-card card-2">
+            <div class="card-content">
+                <div class="decorative-element">✦</div>
+                <div class="offer-badge">Popular</div>
+                <div>
+                    <h2 class="card-title">Luxury Fashion</h2>
+                    <p class="card-subtitle">High-End Fashion Photography</p>
+                    <div class="price-tag">₹40K - ₹65K</div>
+                    <ul class="features-list">
+                        <li>4-hour premium session</li>
+                        <li>Full styling team</li>
+                        <li>50+ edited images</li>
+                        <li>Premium locations</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="book-now">Book Now</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Fine Art Nude -->
+        <div class="instagram-card card-3">
+            <div class="card-content">
+                <div class="decorative-element">◊</div>
+                <div>
+                    <h2 class="card-title">Fine Art Form</h2>
+                    <p class="card-subtitle">Sculptural & Artistic</p>
+                    <div class="price-tag">₹35K - ₹55K</div>
+                    <ul class="features-list">
+                        <li>3-hour artistic session</li>
+                        <li>Professional body art</li>
+                        <li>30+ artistic images</li>
+                        <li>Sculptural lighting</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="book-now">Book Now</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4: Elite Experience -->
+        <div class="instagram-card card-4">
+            <div class="card-content">
+                <div class="offer-badge">Elite</div>
+                <div>
+                    <h2 class="card-title">Elite Experience</h2>
+                    <p class="card-subtitle">Ultimate Luxury Package</p>
+                    <div class="price-tag">₹80K - ₹100K</div>
+                    <ul class="features-list">
+                        <li>Full-day exclusive session</li>
+                        <li>Complete styling team</li>
+                        <li>100+ edited images</li>
+                        <li>Luxury spa treatment included</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="book-now">Book Now</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5: Special Offer -->
+        <div class="instagram-card card-5">
+            <div class="card-content">
+                <div>
+                    <div class="limited-time">Limited Time</div>
+                    <h2 class="card-title">New Year Special</h2>
+                    <p class="card-subtitle">Any Package + Free Gifts</p>
+                    <div class="price-tag">25% OFF</div>
+                    <ul class="features-list">
+                        <li>Valid till January 31st</li>
+                        <li>Free makeup artist</li>
+                        <li>Complimentary prints</li>
+                        <li>Luxury gift hamper</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="book-now">Book Now</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6: Couples Package -->
+        <div class="instagram-card card-6">
+            <div class="card-content">
+                <div>
+                    <h2 class="card-title">Couples Intimacy</h2>
+                    <p class="card-subtitle">Romantic Couple Photography</p>
+                    <div class="price-tag">₹30K - ₹45K</div>
+                    <ul class="features-list">
+                        <li>3-hour romantic session</li>
+                        <li>Couple's styling consultation</li>
+                        <li>40+ edited images</li>
+                        <li>Couple's massage voucher</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="book-now">Book Now</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7: Maternity Special -->
+        <div class="instagram-card" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); color: white;">
+            <div class="card-content">
+                <div>
+                    <h2 class="card-title">Maternity Art</h2>
+                    <p class="card-subtitle">Celebrating New Life</p>
+                    <div class="price-tag">₹20K - ₹35K</div>
+                    <ul class="features-list">
+                        <li>2-hour gentle session</li>
+                        <li>Maternity styling & props</li>
+                        <li>25+ artistic images</li>
+                        <li>Partner inclusion option</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="book-now">Book Now</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 8: Location Showcase -->
+        <div class="instagram-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <div class="card-content">
+                <div>
+                    <h2 class="card-title">Premium Locations</h2>
+                    <p class="card-subtitle">Bhubaneswar's Finest Venues</p>
+                    <div class="price-range">Mayfair • TAJ • Trident</div>
+                    <ul class="features-list">
+                        <li>Luxury hotel suites</li>
+                        <li>Cultural heritage backdrops</li>
+                        <li>Contemporary venues</li>
+                        <li>Private villa collections</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="book-now">Explore</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=500, initial-scale=1.0">
+    <title>ARTY Logo 4 - Geometric Modern</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Lato:wght@100;300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; width: 500px; height: 500px; overflow: hidden; }
+        .logo-container {
+            width: 500px; height: 500px; position: relative; overflow: hidden;
+            background: linear-gradient(135deg, #000000 0%, #2c2c2c 50%, #d4af37 100%);
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50px;
+        }
+        .logo-content {
+            text-align: center; position: relative; z-index: 2;
+        }
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 84px; font-weight: 300; color: #d4af37;
+            letter-spacing: 6px; margin-bottom: 25px;
+            text-shadow: 0 1px 8px rgba(212, 175, 55, 0.4);
+        }
+        .tagline {
+            font-family: 'Lato', sans-serif;
+            font-size: 13px; font-weight: 400; color: #ffffff;
+            letter-spacing: 4px; text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 11px; font-weight: 100; color: #d4af37;
+            letter-spacing: 2px; opacity: 0.9;
+        }
+        .geometric-frame {
+            position: absolute; top: 80px; left: 80px; right: 80px; bottom: 80px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            transform: rotate(45deg);
+        }
+        .inner-frame {
+            position: absolute; top: 120px; left: 120px; right: 120px; bottom: 120px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: rotate(-45deg);
+        }
+        .diamond-accent {
+            position: absolute; top: 60px; left: 50%; transform: translateX(-50%);
+            width: 12px; height: 12px; background: #d4af37;
+            transform: translateX(-50%) rotate(45deg); opacity: 0.8;
+        }
+        .diamond-accent2 {
+            position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%);
+            width: 12px; height: 12px; background: #d4af37;
+            transform: translateX(-50%) rotate(45deg); opacity: 0.8;
+        }
+        .side-lines {
+            position: absolute; left: 60px; top: 50%; transform: translateY(-50%);
+            width: 40px; height: 1px; background: #d4af37; opacity: 0.5;
+        }
+        .side-lines2 {
+            position: absolute; right: 60px; top: 50%; transform: translateY(-50%);
+            width: 40px; height: 1px; background: #d4af37; opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="geometric-frame"></div>
+        <div class="inner-frame"></div>
+        <div class="diamond-accent"></div>
+        <div class="diamond-accent2"></div>
+        <div class="side-lines"></div>
+        <div class="side-lines2"></div>
+        <div class="logo-content">
+            <div class="brand-name">ARTY</div>
+            <div class="tagline">Photography Studio</div>
+            <div class="subtitle">Minimalist • Elegant • Timeless</div>
+        </div>
+    </div>
+</body>
+</html>

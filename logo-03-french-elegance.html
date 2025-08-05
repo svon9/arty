@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=500, initial-scale=1.0">
+    <title>ARTY Logo 3 - French Elegance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&family=Lato:wght@100;300&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; width: 500px; height: 500px; overflow: hidden; }
+        .logo-container {
+            width: 500px; height: 500px; position: relative; overflow: hidden;
+            background: linear-gradient(135deg, #8b0000 0%, #2c1810 50%, #d4af37 100%);
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50px;
+        }
+        .logo-content {
+            text-align: center; position: relative; z-index: 2;
+        }
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px; font-weight: 400; color: #f5f5f5;
+            letter-spacing: 10px; margin-bottom: 10px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+        }
+        .french-main {
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px; font-weight: 600; color: #d4af37;
+            margin-bottom: 15px; line-height: 1;
+        }
+        .english-translation {
+            font-family: 'Lato', sans-serif;
+            font-size: 12px; font-weight: 300; color: #f5f5f5;
+            letter-spacing: 2px; text-transform: uppercase;
+            opacity: 0.8; margin-bottom: 8px;
+        }
+        .specialty {
+            font-family: 'Lato', sans-serif;
+            font-size: 10px; font-weight: 100; color: #d4af37;
+            letter-spacing: 3px; text-transform: uppercase;
+            opacity: 0.9;
+        }
+        .ornamental-border {
+            position: absolute; top: 40px; left: 40px; right: 40px; bottom: 40px;
+            border: 2px solid rgba(212, 175, 55, 0.3); border-radius: 40px;
+        }
+        .corner-accent {
+            position: absolute; top: 50px; left: 50px;
+            width: 30px; height: 30px; border-left: 2px solid #d4af37;
+            border-top: 2px solid #d4af37; opacity: 0.6;
+        }
+        .corner-accent2 {
+            position: absolute; bottom: 50px; right: 50px;
+            width: 30px; height: 30px; border-right: 2px solid #d4af37;
+            border-bottom: 2px solid #d4af37; opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="ornamental-border"></div>
+        <div class="corner-accent"></div>
+        <div class="corner-accent2"></div>
+        <div class="logo-content">
+            <div class="brand-name">ARTY</div>
+            <div class="french-main">L'art de capturer l'âme</div>
+            <div class="english-translation">The Art of Capturing Souls</div>
+            <div class="specialty">Fine Art Photography</div>
+        </div>
+    </div>
+</body>
+</html>

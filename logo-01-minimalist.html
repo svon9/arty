@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=500, initial-scale=1.0">
+    <title>ARTY Logo 1 - Minimalist Elegance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Lato:wght@100;300;400&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; width: 500px; height: 500px; overflow: hidden; }
+        .logo-container {
+            width: 500px; height: 500px; position: relative; overflow: hidden;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50px;
+        }
+        .logo-content {
+            text-align: center; position: relative; z-index: 2;
+        }
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px; font-weight: 300; color: #d4af37;
+            letter-spacing: 12px; margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+        }
+        .tagline {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px; font-weight: 100; color: #f5f5f5;
+            letter-spacing: 3px; text-transform: uppercase;
+            opacity: 0.8; margin-bottom: 8px;
+        }
+        .french-accent {
+            font-family: 'Dancing Script', cursive;
+            font-size: 18px; color: #d4af37; opacity: 0.7;
+            font-style: italic;
+        }
+        .decorative-line {
+            width: 60px; height: 1px; background: #d4af37;
+            margin: 20px auto; opacity: 0.6;
+        }
+        .geometric-accent {
+            position: absolute; top: 50px; right: 50px;
+            width: 3px; height: 80px; background: #d4af37;
+            opacity: 0.3; transform: rotate(45deg);
+        }
+        .geometric-accent2 {
+            position: absolute; bottom: 50px; left: 50px;
+            width: 3px; height: 80px; background: #d4af37;
+            opacity: 0.3; transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="geometric-accent"></div>
+        <div class="geometric-accent2"></div>
+        <div class="logo-content">
+            <div class="brand-name">ARTY</div>
+            <div class="decorative-line"></div>
+            <div class="tagline">Fine Art & Boudoir</div>
+            <div class="french-accent">L'art de l'élégance</div>
+        </div>
+    </div>
+</body>
+</html>

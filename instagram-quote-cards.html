@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Quote Cards - European Cinema Aesthetics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Lato:wght@300;400;600&family=Dancing+Script:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #1a1a1a;
+            padding: 20px;
+            margin: 0;
+            color: white;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .instagram-card {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .instagram-card:hover {
+            transform: scale(1.02);
+        }
+
+        /* Quote Card 1: Godard Cinema Quote */
+        .card-godard {
+            background: linear-gradient(135deg, #2c1810 0%, #1a1a1a 50%, #8b4513 100%);
+            color: #f5f5f5;
+        }
+
+        /* Quote Card 2: Wim Wenders Quote */
+        .card-wenders {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1a1a1a 100%);
+            color: #ffffff;
+        }
+
+        /* Quote Card 3: French Phrase Card */
+        .card-french {
+            background: linear-gradient(135deg, #8b0000 0%, #2c1810 50%, #d4af37 100%);
+            color: #f5f5f5;
+        }
+
+        /* Quote Card 4: Dostoevsky Card */
+        .card-dostoevsky {
+            background: linear-gradient(135deg, #000000 0%, #2c2c2c 50%, #d4af37 100%);
+            color: #ffffff;
+        }
+
+        /* Quote Card 5: Art Philosophy */
+        .card-philosophy {
+            background: linear-gradient(135deg, #4a4a4a 0%, #2c1810 50%, #8b4513 100%);
+            color: #f5f5f5;
+        }
+
+        /* Quote Card 6: Photography Heritage */
+        .card-heritage {
+            background: linear-gradient(135deg, #1a1a1a 0%, #3c3c3c 50%, #d4af37 100%);
+            color: #ffffff;
+        }
+
+        /* Quote Card 7: European Elegance */
+        .card-elegance {
+            background: linear-gradient(135deg, #5c4033 0%, #8b6914 50%, #2c1810 100%);
+            color: #f5f5f5;
+        }
+
+        /* Quote Card 8: Artistic Vision */
+        .card-vision {
+            background: linear-gradient(135deg, #2c2c54 0%, #40407a 50%, #706fd3 100%);
+            color: #ffffff;
+        }
+
+        .card-content {
+            padding: 40px 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            text-align: center;
+        }
+
+        .main-quote {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+        }
+
+        .quote-text:before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            opacity: 0.3;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quote-text:after {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            bottom: -30px;
+            right: -20px;
+            opacity: 0.3;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quote-author {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .french-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #d4af37;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .english-translation {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-style: italic;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .brand-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .instagram-handle {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.8rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .decorative-element {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 8rem;
+            font-family: 'Playfair Display', serif;
+            z-index: 0;
+        }
+
+        .card-godard .decorative-element {
+            bottom: -30px;
+            right: -30px;
+            transform: rotate(-15deg);
+        }
+
+        .card-wenders .decorative-element {
+            top: -30px;
+            left: -30px;
+            transform: rotate(15deg);
+        }
+
+        .card-french .decorative-element {
+            bottom: -20px;
+            left: -20px;
+            transform: rotate(-10deg);
+        }
+
+        .specialty-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(212, 175, 55, 0.9);
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Special styling for different quote types */
+        .card-french .quote-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+        }
+
+        .card-dostoevsky .quote-text {
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+
+        .card-philosophy .quote-text {
+            font-size: 1.3rem;
+            line-height: 1.5;
+        }
+
+        .card-heritage .quote-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .artistic-accent {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            font-style: italic;
+            opacity: 0.7;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .cards-container {
+                gap: 50px;
+            }
+            .instagram-card {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cards-container">
+        
+        <!-- Card 1: Jean-Luc Godard Quote -->
+        <div class="instagram-card card-godard" id="card-godard">
+            <div class="card-content">
+                <div class="decorative-element">🎬</div>
+                <div class="specialty-tag">Cinema</div>
+                <div class="main-quote">
+                    <div class="quote-text">Cinema is the most beautiful fraud in the world</div>
+                    <div class="quote-author">— Jean-Luc Godard</div>
+                    <div class="artistic-accent">Capturing truth through illusion</div>
+                </div>
+                <div class="brand-footer">
+                    <div class="brand-name">ARTY</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Wim Wenders Quote -->
+        <div class="instagram-card card-wenders" id="card-wenders">
+            <div class="card-content">
+                <div class="decorative-element">📸</div>
+                <div class="specialty-tag">Vision</div>
+                <div class="main-quote">
+                    <div class="quote-text">Every image tells a story that words cannot express</div>
+                    <div class="quote-author">— Wim Wenders</div>
+                    <div class="artistic-accent">Visual poetry in motion</div>
+                </div>
+                <div class="brand-footer">
+                    <div class="brand-name">ARTY</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: French Phrase -->
+        <div class="instagram-card card-french" id="card-french">
+            <div class="card-content">
+                <div class="decorative-element">✨</div>
+                <div class="specialty-tag">Français</div>
+                <div class="main-quote">
+                    <div class="french-text">L'art de capturer l'âme</div>
+                    <div class="english-translation">The art of capturing the soul</div>
+                    <div class="artistic-accent">Boudoir photography redefined</div>
+                </div>
+                <div class="brand-footer">
+                    <div class="brand-name">ARTY</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4: Dostoevsky Quote -->
+        <div class="instagram-card card-dostoevsky" id="card-dostoevsky">
+            <div class="card-content">
+                <div class="decorative-element">♦</div>
+                <div class="specialty-tag">Beauty</div>
+                <div class="main-quote">
+                    <div class="french-text">La beauté sauvera le monde</div>
+                    <div class="english-translation">Beauty will save the world</div>
+                    <div class="quote-author">— Dostoevsky</div>
+                    <div class="artistic-accent">Timeless elegance captured</div>
+                </div>
+                <div class="brand-footer">
+                    <div class="brand-name">ARTY</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5: Art Philosophy -->
+        <div class="instagram-card card-philosophy" id="card-philosophy">
+            <div class="card-content">
+                <div class="decorative-element">🎭</div>
+                <div class="specialty-tag">Philosophy</div>
+                <div class="main-quote">
+                    <div class="quote-text">Drawing inspiration from the great masters of photography</div>
+                    <div class="artistic-accent">Edward Weston • Helmut Newton • Man Ray</div>
+                    <div class="english-translation">Classical composition meets contemporary minimalism</div>
+                </div>
+                <div class="brand-footer">
+                    <div class="brand-name">ARTY</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6: Photography Heritage -->
+        <div class="instagram-card card-heritage" id="card-heritage">
+            <div class="card-content">
+                <div class="decorative-element">🏛️</div>
+                <div class="specialty-tag">Heritage</div>
+                <div class="main-quote">
+                    <div class="quote-text">Photography is not just documentation, but poetry made visible</div>
+                    <div class="artistic-accent">Julia Margaret Cameron • Man Ray</div>
+                    <div class="english-translation">Rooted in fine art tradition</div>
+                </div>
+                <div class="brand-footer">
+                    <div class="brand-name">ARTY</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7: European Elegance -->
+        <div class="instagram-card card-elegance" id="card-elegance">
+            <div class="card-content">
+                <div class="decorative-element">👑</div>
+                <div class="specialty-tag">Elegance</div>
+                <div class="main-quote">
+                    <div class="quote-text">Sophisticated European art cinema aesthetics</div>
+                    <div class="french-text">Élégance intemporelle</div>
+                    <div class="english-translation">Timeless elegance in every frame</div>
+                </div>
+                <div class="brand-footer">
+                    <div class="brand-name">ARTY</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 8: Artistic Vision -->
+        <div class="instagram-card card-vision" id="card-vision">
+            <div class="card-content">
+                <div class="decorative-element">🌟</div>
+                <div class="specialty-tag">Vision</div>
+                <div class="main-quote">
+                    <div class="quote-text">Creating images that are both timeless and thoroughly modern</div>
+                    <div class="artistic-accent">Richard Avedon • Annie Leibovitz</div>
+                    <div class="english-translation">Narrative storytelling through lens</div>
+                </div>
+                <div class="brand-footer">
+                    <div class="brand-name">ARTY</div>
+                    <div class="instagram-handle">@Krish_Payn</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Function to convert HTML elements to images
+        function downloadCardAsImage(cardId) {
+            const card = document.getElementById(cardId);
+            
+            // Use html2canvas library (would need to be included)
+            // This is a placeholder for the conversion logic
+            console.log(`Converting ${cardId} to image...`);
+            
+            // In a real implementation, you would use html2canvas:
+            // html2canvas(card, {
+            //     width: 1080,
+            //     height: 1080,
+            //     scale: 2.7 // 1080/400 = 2.7 to get Instagram size
+            // }).then(canvas => {
+            //     const link = document.createElement('a');
+            //     link.download = `${cardId}.png`;
+            //     link.href = canvas.toDataURL();
+            //     link.click();
+            // });
+        }
+
+        // Add click handlers to download cards
+        document.querySelectorAll('.instagram-card').forEach(card => {
+            card.addEventListener('click', () => {
+                downloadCardAsImage(card.id);
+            });
+        });
+    </script>
+</body>
+</html>
