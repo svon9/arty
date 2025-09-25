@@ -3,10 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arty - Fine Art & Visual Direction</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Lato:wght@300;400&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <title>VERA - Visual Elegance and Refined Aesthetics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles */
+        /*
+        VERA: The Atelier - A High-Fashion Aesthetic
+        Design Philosophy:
+        This design is an exercise in minimalist luxury. The core principle is to create
+        visual silence, allowing the artist's work to speak for itself. We move beyond
+        mere functionality to craft an experience rooted in haute couture and European
+        cinematic sensibilities.
+
+        Typography:
+        'Playfair Display' is retained for headings to evoke classical elegance and fine
+        art. 'Lato' is used for body text, providing a clean, modern, and highly legible
+        counterpoint. Varying weights and letter-spacing are used to create a typographic
+        hierarchy that feels deliberate and refined.
+
+        Color Palette:
+        The palette is monochromatic with a single accent.
+        --color-primary: #1a1a1a; (A deep, rich black for a sense of gravitas)
+        --color-background-light: #f5f5f5; (A warm, clean off-white)
+        --color-background-dark: #222; (A dark grey for contrast and depth)
+        --color-accent: #c0a068; (A sophisticated, muted gold)
+        --color-text-light: #aaa; (Soft grey for subtle text)
+
+        Layout & Spacing:
+        Generous white space (or 'negative space') is used as a deliberate design element.
+        It frames content, creating a sense of exclusivity and importance. Grid layouts
+        are fine-tuned for precise alignment, and subtle CSS transitions are added to
+        provide a fluid, enchanting user experience without being distracting.
+
+        Animations & Interactivity:
+        Interactions are subtle and elegant. Hover effects are not just changes in color,
+        but nuanced transformations that feel tactile and responsive. The goal is to
+        make the user feel they are interacting with a piece of art, not just a website.
+        */
+
+        /* Global and Utility Styles */
+        :root {
+            --color-primary: #1a1a1a;
+            --color-background-light: #f5f5f5;
+            --color-background-dark: #222;
+            --color-accent: #c0a068;
+            --color-text-light: #aaa;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,48 +57,56 @@
 
         body {
             font-family: 'Lato', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
+            line-height: 1.8;
+            color: var(--color-primary);
+            background-color: var(--color-background-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.5s ease;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
 
         /* Typography */
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
             font-weight: 300;
-            line-height: 1.2;
+            line-height: 1.1;
+            color: var(--color-primary);
         }
 
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 4.2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
         }
 
         h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.8rem;
+            margin-bottom: 1.8rem;
+            letter-spacing: 1px;
         }
 
         h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 1.9rem;
+            margin-bottom: 1.2rem;
         }
 
         p {
-            margin-bottom: 1rem;
-            color: #666;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+            text-align: justify;
         }
 
         .lead {
             font-size: 1.2rem;
+            font-weight: 300;
             color: #555;
-            margin-bottom: 2rem;
+            line-height: 1.6;
         }
 
         /* Navigation */
@@ -64,527 +114,496 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            background: rgba(245, 245, 245, 0.95);
+            backdrop-filter: blur(8px);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: background 0.3s ease;
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            padding: 0 40px;
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 600;
-            color: #333;
-            letter-spacing: 2px;
+            color: var(--color-primary);
+            letter-spacing: 4px;
+            text-transform: uppercase;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-link {
             text-decoration: none;
-            color: #333;
-            font-weight: 300;
-            transition: color 0.3s ease;
+            color: #555;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
             position: relative;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
         .nav-link:hover,
         .nav-link.active {
-            color: #d4af37;
+            color: var(--color-accent);
         }
 
-        .nav-link.active::after {
+        .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
+            bottom: -8px;
+            left: 50%;
+            width: 0;
             height: 1px;
-            background: #d4af37;
+            background: var(--color-accent);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link.active::after,
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         /* Hero Section */
         .hero {
-            margin-top: 80px;
-            min-height: 80vh;
+            margin-top: 100px;
+            min-height: 90vh;
             display: flex;
             align-items: center;
-            padding: 4rem 0;
-            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--color-background-light) 0%, #ebebeb 100%);
         }
 
         .hero-content {
             flex: 1;
-            max-width: 600px;
-            padding: 0 20px;
+            max-width: 700px;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-title {
-            color: #333;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
+            font-size: 3.8rem;
+            color: var(--color-primary);
+            line-height: 1.05;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
-            color: #666;
-            margin-bottom: 2.5rem;
-            line-height: 1.4;
-        }
-
-        .hero-quote {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .artistic-quote {
+            font-size: 1.4rem;
+            color: #444;
+            margin-bottom: 3rem;
+            line-height: 1.5;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.7s forwards;
             text-align: center;
-            margin: 0 0 2rem 0;
-            position: relative;
         }
 
-        .artistic-quote p {
+        .brand-philosophy {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 1.4rem;
             font-weight: 400;
-            color: #333;
-            font-style: italic;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        .artistic-quote cite {
-            font-family: 'Lato', sans-serif;
-            font-size: 1rem;
-            color: #d4af37;
-            font-weight: 300;
-            font-style: normal;
-            letter-spacing: 1px;
-        }
-
-        .quote-accent {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.2rem;
-            color: #999;
-            margin-top: 1rem;
-            font-style: italic;
+            color: #666;
+            margin-top: 0.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 15px 35px;
-            background: #333;
+            padding: 18px 45px;
+            background: var(--color-primary);
             color: white;
             text-decoration: none;
-            font-size: 1rem;
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 2px;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
             text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .cta-button:hover {
-            background: #d4af37;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background: var(--color-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(192, 160, 104, 0.4);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Sections */
         section {
-            padding: 5rem 0;
+            padding: 6rem 0;
+            position: relative;
         }
 
         .section-title {
             text-align: center;
-            color: #333;
-            margin-bottom: 1rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
         }
 
         .section-subtitle {
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #666;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
-
+        
         /* About Section */
         .about {
-            background: white;
+            background: #fff;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
         }
 
         .about-text h2 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
 
-        .history-section {
-            margin-top: 2rem;
+        .about-text p {
+            line-height: 1.7;
+            text-align: justify;
         }
 
-        .history-section h3 {
-            color: #d4af37;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            margin-top: 1.5rem;
-        }
-
-        /* Quote Styles for About Section */
-        .about-quote {
+        .quote-box {
+            background: var(--color-background-light);
+            padding: 3rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-left: 3px solid var(--color-accent);
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            gap: 2.5rem;
         }
 
-        .cinematic-quote, .directors-quote {
-            text-align: center;
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            border-left: 3px solid #d4af37;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 4px;
-        }
-
-        .cinematic-quote p, .directors-quote p {
+        .quote-item p {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 400;
+            font-size: 1.5rem;
+            font-style: italic;
             color: #333;
-            font-style: italic;
-            margin-bottom: 0.8rem;
             line-height: 1.4;
+            text-align: left;
         }
-
-        .cinematic-quote cite, .directors-quote cite {
-            font-family: 'Lato', sans-serif;
+        
+        .quote-item cite {
+            display: block;
+            margin-top: 0.8rem;
             font-size: 0.9rem;
-            color: #d4af37;
-            font-weight: 400;
-            font-style: normal;
+            color: var(--color-accent);
+            font-weight: 600;
+            text-transform: uppercase;
             letter-spacing: 1px;
+            font-style: normal;
         }
-
-        .french-accent {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.3rem;
-            color: #666;
-            margin: 1rem 0;
-            font-style: italic;
-            text-align: center;
+        
+        .quote-divider {
+            height: 1px;
+            width: 80%;
+            background: rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
         }
-
+        
         /* Services Section */
         .services {
-            background: #f8f8f8;
+            background: var(--color-background-light);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
         }
 
         .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 2px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+            padding: 3rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
             position: relative;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-card.featured {
-            border-top: 3px solid #d4af37;
-        }
-
-        .service-card.premium {
-            border-top: 3px solid #333;
-            background: linear-gradient(135deg, #333 0%, #444 100%);
-            color: white;
-        }
-
-        .service-card.premium h3,
-        .service-card.premium .price {
-            color: #d4af37;
-        }
-
-        .service-card.premium p,
-        .service-card.premium li {
-            color: #ccc;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
         }
 
         .service-card h3 {
             margin-bottom: 1rem;
-            color: #333;
+            color: var(--color-accent);
         }
 
-        .price {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #d4af37;
-            margin-bottom: 1.5rem;
+        .service-card p {
+            color: #555;
+            line-height: 1.7;
+            text-align: justify;
         }
-
-        .service-features {
+        
+        .service-card ul {
             list-style: none;
+            margin-top: 1.5rem;
         }
 
-        .service-features li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #f0f0f0;
-            color: #666;
+        .service-card li {
             position: relative;
             padding-left: 20px;
+            margin-bottom: 0.5rem;
+            color: #666;
+            font-size: 0.95rem;
         }
 
-        .service-features li:before {
+        .service-card li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #d4af37;
+            top: 0;
+            color: var(--color-accent);
             font-weight: bold;
-        }
-
-        .service-card.premium .service-features li {
-            border-bottom: 1px solid #555;
         }
 
         /* Locations Section */
         .locations {
-            background: white;
+            background: #fff;
         }
 
         .locations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 2.5rem;
         }
 
         .location-card {
-            background: #fafafa;
-            padding: 2rem;
-            border-radius: 2px;
-            transition: transform 0.3s ease;
+            background: var(--color-background-light);
+            padding: 2.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, border-left 0.3s ease;
             border-left: 3px solid transparent;
         }
 
         .location-card:hover {
-            transform: translateY(-3px);
-            border-left-color: #d4af37;
+            transform: translateY(-5px);
+            border-left-color: var(--color-accent);
         }
 
-        .location-card.featured {
-            background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
-            border-left-color: #d4af37;
+        .location-card h3 {
+            color: var(--color-primary);
+            font-size: 1.5rem;
         }
-
+        
         .location-type {
-            color: #d4af37;
+            color: var(--color-accent);
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             letter-spacing: 1px;
             margin-bottom: 1rem;
         }
-
+        
         .location-venues {
             list-style: none;
             margin-top: 1rem;
+            color: #666;
         }
 
         .location-venues li {
             padding: 0.3rem 0;
-            color: #666;
             position: relative;
             padding-left: 15px;
         }
 
-        .location-venues li:before {
+        .location-venues li::before {
             content: '•';
             position: absolute;
             left: 0;
-            color: #d4af37;
+            top: 0;
+            color: var(--color-accent);
         }
 
         /* Contact Section */
         .contact {
-            background: #f8f8f8;
+            background: var(--color-primary);
+            color: #fff;
+        }
+
+        .contact .section-title,
+        .contact .section-subtitle {
+            color: #fff;
         }
 
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
+            gap: 5rem;
+            align-items: center;
         }
 
         .contact-info h3 {
+            color: var(--color-accent);
             margin-bottom: 1.5rem;
-            color: #333;
         }
 
         .contact-info p {
-            margin-bottom: 0.5rem;
+            color: var(--color-text-light);
             font-size: 1.1rem;
+            line-height: 1.7;
+            text-align: justify;
         }
 
         .booking-note {
             margin-top: 2rem;
-            padding: 1.5rem;
-            background: white;
-            border-left: 3px solid #d4af37;
-            border-radius: 2px;
+            padding: 2rem;
+            background: var(--color-background-dark);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 3px solid var(--color-accent);
         }
 
         .booking-note h4 {
-            color: #333;
-            margin-bottom: 0.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        .booking-note p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        .contact-form-container {
+            background: var(--color-background-dark);
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .contact-form {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 2px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .contact-form form {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.8rem;
         }
 
         .contact-form input,
         .contact-form select,
         .contact-form textarea {
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 2px;
+            padding: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: transparent;
+            color: #fff;
             font-size: 1rem;
-            font-family: inherit;
+            font-family: 'Lato', sans-serif;
             transition: border-color 0.3s ease;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: var(--color-text-light);
         }
 
         .contact-form input:focus,
         .contact-form select:focus,
         .contact-form textarea:focus {
             outline: none;
-            border-color: #d4af37;
+            border-color: var(--color-accent);
         }
+        .contact-form .cta-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--color-accent);
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 18px;
+            letter-spacing: 2px;
+            transition: background 0.3s ease;
+        }
+        .contact-form .cta-button:hover {
+            background: #d4af37;
+            transform: none;
+            box-shadow: none;
+        }
+
 
         /* Footer */
         .footer {
-            background: #333;
-            color: #ccc;
+            background: var(--color-background-dark);
+            color: var(--color-text-light);
             text-align: center;
-            padding: 2rem 0;
+            padding: 2.5rem 0;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .about-text, .quote-box {
+                text-align: center;
+            }
+            .quote-box {
+                padding: 2rem;
+            }
+        }
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
             }
-            
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 2rem 0;
+            .container {
+                padding: 0 20px;
             }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .services-grid,
-            .locations-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .artistic-quote p {
-                font-size: 1.8rem !important;
-            }
-            
-            .hero-quote {
-                margin-top: 2rem;
-            }
-            
-            .about-quote {
-                padding: 1.5rem;
-            }
-            
-            .cinematic-quote p, .directors-quote p {
-                font-size: 1.2rem !important;
-            }
-            
             h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
-            
             h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
-            
             section {
-                padding: 3rem 0;
+                padding: 4rem 0;
             }
-        }
-
-        @media (max-width: 480px) {
-            .service-card,
-            .contact-form {
-                padding: 1.5rem;
+            .hero-content {
+                text-align: center;
             }
-            
-            .hero-title {
-                font-size: 2rem;
+            .quote-item p {
+                font-size: 1.3rem;
             }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
+            .service-card, .location-card, .contact-form-container {
+                padding: 2rem;
             }
         }
     </style>
@@ -592,58 +611,47 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">ARTY</div>
+            <div class="logo">VERA</div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">The Artist</a></li>
+                <li><a href="#about" class="nav-link">The Atelier</a></li>
                 <li><a href="#services" class="nav-link">Creations</a></li>
                 <li><a href="#locations" class="nav-link">Locations</a></li>
-                <li><a href="#contact" class="nav-link">Collaborate</a></li>
+                <li><a href="#contact" class="nav-link">Connect</a></li>
             </ul>
         </div>
     </nav>
 
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Visual Storytelling & Fine Art Portraits</h1>
-            <p class="hero-subtitle">A studio dedicated to crafting visual narratives through a cinematic lens. Explore commissions in fine art, music, and fashion.</p>
-            <div class="hero-cta">
-                <a href="#services" class="cta-button">Explore The Art</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Visual Direction & Fine Art Portraiture</h1>
+                <p class="brand-philosophy">Visual Elegance and Refined Aesthetics</p>
+                <p class="hero-subtitle">The confluence of haute couture, cinematic heritage, and minimalist form.</p>
+                <div class="hero-cta">
+                    <a href="#services" class="cta-button">Explore The Art</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-quote">
-            <blockquote class="artistic-quote">
-                <p>"L'art de capturer l'âme"</p>
-                <cite>— The ARTY Philosophy</cite>
-            </blockquote>
-            <div class="quote-accent">The Art of Capturing the Soul</div>
         </div>
     </section>
 
     <section id="about" class="about">
         <div class="container">
+            <h2 class="section-title">The VERA Atelier</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About the Artist</h2>
-                    <p class="lead">An <em>artiste visuel</em> with an atelier’s eye for minimalism and a penchant for clean, elegant compositions—rooted in the worlds of haute couture and the délicatesse of fine art photography.</p>
-                    
-                    <div class="history-section">
-                        <h3>Artistic Philosophy</h3>
-                        <p>Drawing inspiration from the great masters of photography - from Edward Weston's sculptural forms to Helmut Newton's powerful fashion imagery - our approach combines classical composition with contemporary minimalism.</p>
-                        
-                        <h3>Cinematic Heritage</h3>
-                        <p>Our work is deeply influenced by the European art cinema of directors like Jean-Luc Godard and Wim Wenders. We believe every image must tell a story that words cannot express, capturing truth through beautiful illusion.</p>
-                    </div>
+                    <p class="lead">An <em>artiste visuel</em> with an atelier’s eye for minimalism and a penchant for clean, elegant compositions. The work is deeply rooted in the worlds of haute couture and the delicate essence of fine art photography.</p>
+                    <p>Drawing inspiration from masters like Edward Weston's sculptural forms and Helmut Newton's powerful fashion imagery, my approach combines classical composition with a contemporary, refined minimalism. Each piece is a philosophical exploration of form, light, and narrative.</p>
                 </div>
-                <div class="about-quote">
-                    <blockquote class="cinematic-quote">
-                        <p>"Cinema is the most beautiful fraud in the world"</p>
-                        <cite>— Jean-Luc Godard</cite>
+                <div class="quote-box">
+                    <blockquote class="quote-item">
+                        <p>"L'art de capturer l'âme"</p>
+                        <cite>— The VERA Philosophy</cite>
                     </blockquote>
-                    <div class="french-accent">Élégance intemporelle</div>
-                    <blockquote class="directors-quote">
-                        <p>"Every image tells a story that words cannot express"</p>
-                        <cite>— Wim Wenders</cite>
+                    <div class="quote-divider"></div>
+                    <blockquote class="quote-item">
+                        <p>"Cinema is the most beautiful fraud in the world."</p>
+                        <cite>— Jean-Luc Godard</cite>
                     </blockquote>
                 </div>
             </div>
@@ -652,43 +660,32 @@
 
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Creative Commissions</h2>
-            <p class="section-subtitle">Collaborate with us to bring your vision to life through powerful, elegant imagery.</p>
+            <h2 class="section-title">Creative Creations</h2>
+            <p class="section-subtitle">A curated collection of visual storytelling, designed to transcend the ordinary.</p>
             
             <div class="services-grid">
-                <div class="service-card featured">
+                <div class="service-card">
                     <h3>Fine Art Portraits</h3>
-                    <p class="price">The Intersection of Form & Soul</p>
-                    <ul class="service-features">
-                        <li>For artists, collectors, and personal commissions.</li>
+                    <p>For collectors and individuals seeking gallery-worthy images that explore the intersection of form, soul, and legacy. Each portrait is a timeless investment in personal narrative.</p>
+                    <ul>
                         <li>Focus on sculptural lighting and emotive composition.</li>
-                        <li>Creates gallery-worthy images that transcend traditional portraiture.</li>
-                        <li>Explores themes of heritage, beauty, and philosophy.</li>
-                        <li>A timeless investment in personal or brand legacy.</li>
+                        <li>Transcendental portraiture as a fine art form.</li>
                     </ul>
                 </div>
-
                 <div class="service-card">
                     <h3>Music & Album Art</h3>
-                    <p class="price">Visuals that Resonate</p>
-                    <ul class="service-features">
-                        <li>For musicians and bands seeking a distinct visual identity.</li>
-                        <li>Develops concepts for album covers, posters, and promotional material.</li>
-                        <li>Translates sonic landscapes into compelling cinematic visuals.</li>
-                        <li>Blends artistic vision with the artist's unique sound.</li>
-                        <li>Creates iconic imagery that defines an era.</li>
+                    <p>Translating the sonic landscape into a compelling visual narrative. These are not just images, but cinematic extensions of a musician's unique sound and identity.</p>
+                    <ul>
+                        <li>Visuals that resonate with the artist's sound.</li>
+                        <li>Development of iconic, era-defining imagery.</li>
                     </ul>
                 </div>
-
                 <div class="service-card">
                     <h3>Glamour & Fashion</h3>
-                    <p class="price">Contemporary Elegance</p>
-                    <ul class="service-features">
-                        <li>For brands, models, and individuals with a story to tell.</li>
-                        <li>High-fashion sensibility with a focus on narrative.</li>
-                        <li>Clean, minimalist aesthetic that highlights the subject.</li>
-                        <li>Draws from a rich history of fashion photography.</li>
-                        <li>Produces sophisticated, modern, and timeless imagery.</li>
+                    <p>Sophisticated, modern imagery with a high-fashion sensibility. Our approach is to tell a story through elegant compositions and a clean, minimalist aesthetic.</p>
+                    <ul>
+                        <li>High-fashion narrative with contemporary elegance.</li>
+                        <li>Focus on clean lines and powerful, timeless forms.</li>
                     </ul>
                 </div>
             </div>
@@ -698,28 +695,27 @@
     <section id="locations" class="locations">
         <div class="container">
             <h2 class="section-title">Premium Locations</h2>
-            <p class="section-subtitle">Exclusive venues for extraordinary photography</p>
+            <p class="section-subtitle">A curated selection of exclusive venues for extraordinary photography.</p>
             
             <div class="locations-grid">
                 <div class="location-card">
                     <h3>Novotel Hyderabad</h3>
                     <p class="location-type">Luxury Hotel Suite</p>
-                    <p>Contemporary luxury with modern amenities and sophisticated interiors, perfect for high-end fashion and artistic photography.</p>
+                    <p>Contemporary luxury with sophisticated interiors, perfect for high-end fashion and artistic photography with a modern feel.</p>
                 </div>
                 <div class="location-card">
                     <h3>Taj Krishna</h3>
                     <p class="location-type">Palace Collection</p>
-                    <p>Elegant colonial architecture with sophisticated interiors, ideal for classic and fashion photography sessions.</p>
+                    <p>Elegant colonial architecture with rich, sophisticated interiors, ideal for classic portraiture and timeless fashion sessions.</p>
                 </div>
-                <div class="location-card featured">
+                <div class="location-card">
                     <h3>Hyderabad Exclusives</h3>
                     <p class="location-type">Premium Collection</p>
-                    <p>Modern metropolitan backdrops, luxury resorts, and contemporary venues showcasing Hyderabad's finest locations.</p>
+                    <p>A collection of modern metropolitan backdrops and luxury resorts that showcase the city's finest and most unique locales.</p>
                     <ul class="location-venues">
                         <li>Radisson Blu Plaza</li>
                         <li>The Park Hyderabad</li>
                         <li>ITC Kakatiya</li>
-                        <li>Private luxury collections</li>
                     </ul>
                 </div>
             </div>
@@ -728,35 +724,24 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Collaborate With ARTY</h2>
-            <p class="section-subtitle">Begin the conversation about your next creative project.</p>
+            <h2 class="section-title">Begin the Conversation</h2>
+            <p class="section-subtitle">Reach out to discuss your creative project.</p>
             
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Inquiry & Booking</h3>
-                    <p>Email: srivonx@gmail.com</p>
-                    <p>Instagram: @artyxarty</p>
-                    
+                    <h3>A Creative Dialogue</h3>
+                    <p>Whether for a personal project or a commercial collaboration, we value unique visions and a commitment to creating exceptional work. We invite you to begin a conversation about your next creative endeavor.</p>
                     <div class="booking-note">
-                        <h4>The Process</h4>
-                        <p><strong>We seek:</strong> Collaborators with a passion for art, music, and fashion. We value unique visions and a commitment to creating exceptional work.</p>
-                        <p><strong>Our commitment:</strong> We provide full creative direction, styling, and a seamless production experience to bring your ideas into reality.</p>
-                        <p><strong>Initiate:</strong> Submit your concept or inquiry, and our studio will connect with you within 48 hours to schedule a creative consultation.</p>
+                        <h4>Our Commitment</h4>
+                        <p>We provide full creative direction, styling, and a seamless production experience to bring your ideas into reality. The process begins with a creative consultation to understand your vision.</p>
                     </div>
                 </div>
-                
-                <div class="contact-form">
-                    <form>
+                <div class="contact-form-container">
+                    <form class="contact-form">
                         <input type="text" name="name" placeholder="Your Full Name" required>
                         <input type="email" name="email" placeholder="Email Address" required>
-                        <select name="opportunity" required>
-                            <option value="">Select Area of Interest</option>
-                            <option value="fine-art">Fine Art Portrait</option>
-                            <option value="music-poster">Music & Album Art</option>
-                            <option value="glamour-fashion">Glamour & Fashion</option>
-                        </select>
                         <textarea name="message" placeholder="Tell us about your project, your vision, and your inspiration..." rows="5" required></textarea>
-                        <button type="submit" class="cta-button">Begin Collaboration</button>
+                        <button type="submit" class="cta-button">Send Inquiry</button>
                     </form>
                 </div>
             </div>
@@ -765,10 +750,10 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Arty Photography. All rights reserved. | Fine Art & Visual Direction</p>
+            <p>&copy; 2024 VERA. All rights reserved. | Visual Direction & Fine Art</p>
         </div>
     </footer>
-
+    
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         // Smooth scrolling navigation
@@ -820,34 +805,6 @@
                 });
             });
 
-            // Service card hover animations
-            const serviceCards = document.querySelectorAll('.service-card');
-            
-            serviceCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-8px) scale(1.02)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-
-            // Location card animations
-            const locationCards = document.querySelectorAll('.location-card');
-            
-            locationCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px)';
-                    this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.15)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = 'none';
-                });
-            });
-
             // EmailJS Configuration
             // IMPORTANT: Replace with your EmailJS public key, service ID, and template ID
             emailjs.init("ooggSqM8FuBbgaqIE"); // Replace with your EmailJS public key
@@ -883,7 +840,6 @@
                         const templateParams = {
                             from_name: formData.get('name') || this.querySelector('input[type="text"]').value,
                             from_email: formData.get('email') || this.querySelector('input[type="email"]').value,
-                            service_type: formData.get('opportunity') || this.querySelector('select').value,
                             message: formData.get('message') || this.querySelector('textarea').value,
                             to_email: 'srivonx@gmail.com'
                         };
@@ -935,94 +891,6 @@
                     }
                 });
             }
-
-            // Parallax effect for hero section
-            window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const hero = document.querySelector('.hero');
-                
-                if (hero) {
-                    const rate = scrolled * -0.5;
-                    hero.style.transform = `translateY(${rate}px)`;
-                }
-            });
-
-            // Intersection Observer for fade-in animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observe elements for animation
-            const animateElements = document.querySelectorAll('.service-card, .location-card, .about-content, .contact-content');
-            
-            animateElements.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-
-            // CTA button hover effects
-            const ctaButtons = document.querySelectorAll('.cta-button');
-            
-            ctaButtons.forEach(button => {
-                button.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-3px)';
-                    this.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.3)';
-                });
-                
-                button.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
-                });
-            });
-
-            // Price hover animation
-            const priceElements = document.querySelectorAll('.price');
-            
-            priceElements.forEach(price => {
-                price.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.1)';
-                    this.style.transition = 'transform 0.3s ease';
-                });
-                
-                price.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
-                });
-            });
-
-            // Mobile menu toggle (for future mobile optimization)
-            const createMobileMenu = () => {
-                const nav = document.querySelector('.navbar');
-                const navMenu = document.querySelector('.nav-menu');
-                
-                if (window.innerWidth <= 768) {
-                    // Mobile menu logic can be added here
-                    console.log('Mobile view detected');
-                }
-            };
-
-            // Check for mobile on load and resize
-            createMobileMenu();
-            window.addEventListener('resize', createMobileMenu);
-
-            // Loading animation
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.5s ease';
-            
-            window.addEventListener('load', function() {
-                document.body.style.opacity = '1';
-            });
         });
     </script>
 </body>
