@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>/*---
 * VERA GENERATOR STYLES - MASTER EDITION
-* Palette: royal | Layout: asymmetric | Typography: elegant
+* Palette: royal | Layout: minimalist | Typography: classic
 ---*/
 :root {
     --color-primary: #4a2c6d;
@@ -46,7 +46,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 600;
     line-height: 1.2;
     color: var(--color-primary);
@@ -274,19 +274,13 @@ section {
 
 /* Enhanced Layout Styles */
 
-.about .section-content {
-    grid-template-columns: 2fr 1fr;
-    align-items: center;
+.section-content {
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    margin: 0 auto;
 }
-.services .section-content {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-.contact .section-content {
-    grid-template-columns: 1fr 1.5fr;
-    align-items: start;
-    gap: 4rem;
-}
+.section-content h3 { text-align: center; }
+.about-content { text-align: justify; }
 
 
 /* Section-specific styles */
@@ -573,7 +567,7 @@ section {
                             <p class="section-subtitle">Where visual poetry meets technical precision in a symphony of aesthetic excellence</p>
                             <div class="section-content about-content">
                                 <div>
-                                    <p>As a <em>maestro of visual narrative</em>, my work transcends mere photography to become a dialogue between light, form, and emotion. Each composition is meticulously crafted with an atelier's dedication to detail, drawing inspiration from the golden ratio's mathematical perfection and the emotional resonance of Renaissance masters.</p>
+                                    <p>As a <em>curator of visual narrative</em>, my work transcends mere photography to become a dialogue between light, form, and emotion. Each composition is meticulously crafted with an atelier's dedication to detail, drawing inspiration from the golden ratio's mathematical perfection and the emotional resonance of Renaissance masters.</p>
                                     <p>My philosophy merges the disciplined elegance of Japanese wabi-sabi with the bold vision of contemporary European aesthetics. The result is a visual language that speaks to both the conscious and subconscious, creating imagery that doesn't just capture moments but etches memories into the fabric of perception.</p>
                                 </div>
                                 <div class="quote-box" style="background: rgba(192, 160, 104, 0.05); padding: 2rem; border-radius: 10px; border-left: 4px solid var(--color-accent);">
@@ -617,9 +611,57 @@ section {
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                                 <div class="gallery-scroll" id="gallery-scroll">
-                                    <!-- Images will be dynamically loaded here -->
+                                    
+                        <div class="gallery-item">
+                            <img src="images/image1.jpg" alt="Portfolio image 1" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <h3>Visual Art 1</h3>
+                                <p>Capturing moments of elegance and narrative depth</p>
+                            </div>
+                        </div>
+                    
+                        <div class="gallery-item">
+                            <img src="images/image2.jpg" alt="Portfolio image 2" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <h3>Visual Art 2</h3>
+                                <p>Capturing moments of elegance and narrative depth</p>
+                            </div>
+                        </div>
+                    
+                        <div class="gallery-item">
+                            <img src="images/image3.jpg" alt="Portfolio image 3" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <h3>Visual Art 3</h3>
+                                <p>Capturing moments of elegance and narrative depth</p>
+                            </div>
+                        </div>
+                    
+                        <div class="gallery-item">
+                            <img src="images/image4.jpg" alt="Portfolio image 4" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <h3>Visual Art 4</h3>
+                                <p>Capturing moments of elegance and narrative depth</p>
+                            </div>
+                        </div>
+                    
+                        <div class="gallery-item">
+                            <img src="images/image5.jpg" alt="Portfolio image 5" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <h3>Visual Art 5</h3>
+                                <p>Capturing moments of elegance and narrative depth</p>
+                            </div>
+                        </div>
+                    
+                        <div class="gallery-item">
+                            <img src="images/image6.jpg" alt="Portfolio image 6" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <h3>Visual Art 6</h3>
+                                <p>Capturing moments of elegance and narrative depth</p>
+                            </div>
+                        </div>
+                    
                                 </div>
-                                <div class="gallery-counter" id="gallery-counter">Loading images...</div>
+                                <div class="gallery-counter" id="gallery-counter">1 / 6</div>
                             </div>
                         </div>
                     </section>
@@ -661,143 +703,6 @@ section {
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Dynamic image loading for gallery
-        function loadGalleryImages() {
-            const galleryScroll = document.getElementById('gallery-scroll');
-            const galleryCounter = document.getElementById('gallery-counter');
-            
-            if (!galleryScroll) return;
-            
-            // List of common image extensions
-            const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp'];
-            
-            // Function to try loading an image
-            function tryImageLoad(imageName, index) {
-                const img = new Image();
-                img.onload = function() {
-                    // Create gallery item for successfully loaded image
-                    const galleryItem = document.createElement('div');
-                    galleryItem.className = 'gallery-item';
-                    
-                    const galleryImage = document.createElement('img');
-                    galleryImage.src = 'images/' + imageName;
-                    galleryImage.alt = 'Portfolio image ' + (index + 1);
-                    galleryImage.className = 'gallery-image';
-                    
-                    const galleryOverlay = document.createElement('div');
-                    galleryOverlay.className = 'gallery-overlay';
-                    galleryOverlay.innerHTML = `
-                        <h3>Visual Art ${index + 1}</h3>
-                        <p>Capturing moments of elegance and narrative depth</p>
-                    `;
-                    
-                    galleryItem.appendChild(galleryImage);
-                    galleryItem.appendChild(galleryOverlay);
-                    galleryScroll.appendChild(galleryItem);
-                    
-                    // Update counter
-                    updateGalleryCounter();
-                };
-                
-                img.onerror = function() {
-                    // Image failed to load, try next extension if available
-                    console.log('Failed to load: ' + imageName);
-                };
-                
-                img.src = 'images/' + imageName;
-            }
-            
-            // Try to load images with different naming patterns
-            // First try a generic pattern that might match common naming conventions
-            for (let i = 1; i <= 20; i++) {
-                // Try different naming patterns
-                const patterns = [
-                    `image${i}.${ext}`,
-                    `img${i}.${ext}`,
-                    `photo${i}.${ext}`,
-                    `pic${i}.${ext}`,
-                    `gallery${i}.${ext}`,
-                    `portfolio${i}.${ext}`,
-                    `art${i}.${ext}`,
-                    `work${i}.${ext}`
-                ];
-                
-                patterns.forEach(pattern => {
-                    imageExtensions.forEach(ext => {
-                        tryImageLoad(pattern.replace('${ext}', ext), i-1);
-                    });
-                });
-            }
-            
-            // Update gallery counter
-            function updateGalleryCounter() {
-                const galleryItems = document.querySelectorAll('.gallery-item');
-                if (galleryCounter && galleryItems.length > 0) {
-                    galleryCounter.textContent = `1 / ${galleryItems.length}`;
-                } else if (galleryCounter) {
-                    galleryCounter.textContent = 'No images found';
-                }
-            }
-            
-            // Initialize gallery navigation after images are loaded
-            setTimeout(initializeGalleryNavigation, 1000);
-        }
-        
-        // Initialize gallery navigation
-        function initializeGalleryNavigation() {
-            const galleryScroll = document.getElementById('gallery-scroll');
-            const galleryCounter = document.getElementById('gallery-counter');
-            const prevButton = document.querySelector('.gallery-nav.prev');
-            const nextButton = document.querySelector('.gallery-nav.next');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            
-            if (galleryScroll && galleryItems.length > 0) {
-                const itemWidth = galleryItems[0].offsetWidth + 24; // width + gap
-                let currentIndex = 0;
-                
-                function updateGalleryCounter() {
-                    if (galleryCounter) {
-                        galleryCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
-                    }
-                }
-                
-                function scrollToIndex(index) {
-                    if (index >= 0 && index < galleryItems.length) {
-                        currentIndex = index;
-                        galleryScroll.scrollTo({
-                            left: index * itemWidth,
-                            behavior: 'smooth'
-                        });
-                        updateGalleryCounter();
-                    }
-                }
-                
-                if (prevButton) {
-                    prevButton.addEventListener('click', function() {
-                        scrollToIndex(currentIndex - 1);
-                    });
-                }
-                
-                if (nextButton) {
-                    nextButton.addEventListener('click', function() {
-                        scrollToIndex(currentIndex + 1);
-                    });
-                }
-                
-                // Update counter on scroll
-                galleryScroll.addEventListener('scroll', function() {
-                    const scrollPos = galleryScroll.scrollLeft;
-                    currentIndex = Math.round(scrollPos / itemWidth);
-                    updateGalleryCounter();
-                });
-                
-                updateGalleryCounter();
-            }
-        }
-        
-        // Load gallery images when DOM is ready
-        loadGalleryImages();
-
         // Smooth scrolling for navigation links
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
@@ -842,6 +747,56 @@ section {
                 }
             });
         });
+
+        // Horizontal gallery navigation
+        const galleryScroll = document.getElementById('gallery-scroll');
+        const galleryCounter = document.getElementById('gallery-counter');
+        const prevButton = document.querySelector('.gallery-nav.prev');
+        const nextButton = document.querySelector('.gallery-nav.next');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        if (galleryScroll && galleryItems.length > 0) {
+            const itemWidth = galleryItems[0].offsetWidth + 24; // width + gap
+            let currentIndex = 0;
+            
+            function updateGalleryCounter() {
+                if (galleryCounter) {
+                    galleryCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+                }
+            }
+            
+            function scrollToIndex(index) {
+                if (index >= 0 && index < galleryItems.length) {
+                    currentIndex = index;
+                    galleryScroll.scrollTo({
+                        left: index * itemWidth,
+                        behavior: 'smooth'
+                    });
+                    updateGalleryCounter();
+                }
+            }
+            
+            if (prevButton) {
+                prevButton.addEventListener('click', function() {
+                    scrollToIndex(currentIndex - 1);
+                });
+            }
+            
+            if (nextButton) {
+                nextButton.addEventListener('click', function() {
+                    scrollToIndex(currentIndex + 1);
+                });
+            }
+            
+            // Update counter on scroll
+            galleryScroll.addEventListener('scroll', function() {
+                const scrollPos = galleryScroll.scrollLeft;
+                currentIndex = Math.round(scrollPos / itemWidth);
+                updateGalleryCounter();
+            });
+            
+            updateGalleryCounter();
+        }
 
         // EmailJS integration for contact form
         emailjs.init("ooggSqM8FuBbgaqIE");
