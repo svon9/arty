@@ -4,894 +4,943 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VERA - Visual Elegance and Refined Aesthetics</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        /*
-        VERA: The Atelier - A High-Fashion Aesthetic
-        Design Philosophy:
-        This design is an exercise in minimalist luxury. The core principle is to create
-        visual silence, allowing the artist's work to speak for itself. We move beyond
-        mere functionality to craft an experience rooted in haute couture and European
-        cinematic sensibilities.
-
-        Typography:
-        'Playfair Display' is retained for headings to evoke classical elegance and fine
-        art. 'Lato' is used for body text, providing a clean, modern, and highly legible
-        counterpoint. Varying weights and letter-spacing are used to create a typographic
-        hierarchy that feels deliberate and refined.
-
-        Color Palette:
-        The palette is monochromatic with a single accent.
-        --color-primary: #1a1a1a; (A deep, rich black for a sense of gravitas)
-        --color-background-light: #f5f5f5; (A warm, clean off-white)
-        --color-background-dark: #222; (A dark grey for contrast and depth)
-        --color-accent: #c0a068; (A sophisticated, muted gold)
-        --color-text-light: #aaa; (Soft grey for subtle text)
-
-        Layout & Spacing:
-        Generous white space (or 'negative space') is used as a deliberate design element.
-        It frames content, creating a sense of exclusivity and importance. Grid layouts
-        are fine-tuned for precise alignment, and subtle CSS transitions are added to
-        provide a fluid, enchanting user experience without being distracting.
-
-        Animations & Interactivity:
-        Interactions are subtle and elegant. Hover effects are not just changes in color,
-        but nuanced transformations that feel tactile and responsive. The goal is to
-        make the user feel they are interacting with a piece of art, not just a website.
-        */
-
-        /* Global and Utility Styles */
-        :root {
-            --color-primary: #1a1a1a;
-            --color-background-light: #f5f5f5;
-            --color-background-dark: #222;
-            --color-accent: #c0a068;
-            --color-text-light: #aaa;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            line-height: 1.8;
-            color: var(--color-primary);
-            background-color: var(--color-background-light);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            transition: background-color 0.5s ease;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        /* Typography */
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 300;
-            line-height: 1.1;
-            color: var(--color-primary);
-        }
-
-        h1 {
-            font-size: 4.2rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-        }
-
-        h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1.8rem;
-            letter-spacing: 1px;
-        }
-
-        h3 {
-            font-size: 1.9rem;
-            margin-bottom: 1.2rem;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            color: var(--color-primary);
-            text-align: justify;
-        }
-
-        .lead {
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(245, 245, 245, 0.95);
-            backdrop-filter: blur(8px);
-            z-index: 1000;
-            padding: 1.2rem 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            transition: background 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 40px;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--color-primary);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: #555;
-            font-weight: 400;
-            letter-spacing: 1.5px;
-            transition: color 0.3s ease, border-bottom 0.3s ease;
-            position: relative;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--color-accent);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            width: 0;
-            height: 1px;
-            background: var(--color-accent);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-link.active::after,
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 100px;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            padding: 6rem 0;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--color-background-light) 0%, #ebebeb 100%);
-        }
-
-        .hero-content {
-            flex: 1;
-            max-width: 700px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-size: 3.8rem;
-            color: var(--color-primary);
-            line-height: 1.05;
-            transform: translateY(20px);
-            opacity: 0;
-            animation: fadeIn 1s ease-out 0.5s forwards;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            color: #444;
-            margin-bottom: 3rem;
-            line-height: 1.5;
-            transform: translateY(20px);
-            opacity: 0;
-            animation: fadeIn 1s ease-out 0.7s forwards;
-            text-align: center;
-        }
-
-        .brand-philosophy {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 400;
-            color: #666;
-            margin-top: 0.8rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 18px 45px;
-            background: var(--color-primary);
-            color: white;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .cta-button:hover {
-            background: var(--color-accent);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(192, 160, 104, 0.4);
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Sections */
-        section {
-            padding: 6rem 0;
-            position: relative;
-        }
-
-        .section-title {
-            text-align: center;
-            color: var(--color-primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 4rem;
-        }
-        
-        /* About Section */
-        .about {
-            background: #fff;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            margin-bottom: 1.8rem;
-        }
-
-        .about-text p {
-            line-height: 1.7;
-            text-align: justify;
-        }
-
-        .quote-box {
-            background: var(--color-background-light);
-            padding: 3rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            border-left: 3px solid var(--color-accent);
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-        }
-
-        .quote-item p {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-style: italic;
-            color: #333;
-            line-height: 1.4;
-            text-align: left;
-        }
-        
-        .quote-item cite {
-            display: block;
-            margin-top: 0.8rem;
-            font-size: 0.9rem;
-            color: var(--color-accent);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-style: normal;
-        }
-        
-        .quote-divider {
-            height: 1px;
-            width: 80%;
-            background: rgba(0, 0, 0, 0.1);
-            margin: 0 auto;
-        }
-        
-        /* Services Section */
-        .services {
-            background: var(--color-background-light);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
-        }
-
-        .service-card {
-            background: #fff;
-            padding: 3rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            position: relative;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-card h3 {
-            margin-bottom: 1rem;
-            color: var(--color-accent);
-        }
-
-        .service-card p {
-            color: #555;
-            line-height: 1.7;
-            text-align: justify;
-        }
-        
-        .service-card ul {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .service-card li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 0.5rem;
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .service-card li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--color-accent);
-            font-weight: bold;
-        }
-
-        /* Locations Section */
-        .locations {
-            background: #fff;
-        }
-
-        .locations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .location-card {
-            background: var(--color-background-light);
-            padding: 2.5rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, border-left 0.3s ease;
-            border-left: 3px solid transparent;
-        }
-
-        .location-card:hover {
-            transform: translateY(-5px);
-            border-left-color: var(--color-accent);
-        }
-
-        .location-card h3 {
-            color: var(--color-primary);
-            font-size: 1.5rem;
-        }
-        
-        .location-type {
-            color: var(--color-accent);
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-        
-        .location-venues {
-            list-style: none;
-            margin-top: 1rem;
-            color: #666;
-        }
-
-        .location-venues li {
-            padding: 0.3rem 0;
-            position: relative;
-            padding-left: 15px;
-        }
-
-        .location-venues li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--color-accent);
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--color-primary);
-            color: #fff;
-        }
-
-        .contact .section-title,
-        .contact .section-subtitle {
-            color: #fff;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-        }
-
-        .contact-info h3 {
-            color: var(--color-accent);
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-info p {
-            color: var(--color-text-light);
-            font-size: 1.1rem;
-            line-height: 1.7;
-            text-align: justify;
-        }
-
-        .booking-note {
-            margin-top: 2rem;
-            padding: 2rem;
-            background: var(--color-background-dark);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-left: 3px solid var(--color-accent);
-        }
-
-        .booking-note h4 {
-            color: #fff;
-            margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
-        }
-
-        .booking-note p {
-            color: var(--color-text-light);
-            font-size: 0.95rem;
-        }
-
-        .contact-form-container {
-            background: var(--color-background-dark);
-            padding: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-        }
-
-        .contact-form input,
-        .contact-form select,
-        .contact-form textarea {
-            padding: 18px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: transparent;
-            color: #fff;
-            font-size: 1rem;
-            font-family: 'Lato', sans-serif;
-            transition: border-color 0.3s ease;
-        }
-
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: var(--color-text-light);
-        }
-
-        .contact-form input:focus,
-        .contact-form select:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--color-accent);
-        }
-        .contact-form .cta-button {
-            display: block;
-            width: 100%;
-            text-align: center;
-            background: var(--color-accent);
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 18px;
-            letter-spacing: 2px;
-            transition: background 0.3s ease;
-        }
-        .contact-form .cta-button:hover {
-            background: #d4af37;
-            transform: none;
-            box-shadow: none;
-        }
-
-
-        /* Footer */
-        .footer {
-            background: var(--color-background-dark);
-            color: var(--color-text-light);
-            text-align: center;
-            padding: 2.5rem 0;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 3.5rem;
-            }
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            .about-text, .quote-box {
-                text-align: center;
-            }
-            .quote-box {
-                padding: 2rem;
-            }
-        }
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            .container {
-                padding: 0 20px;
-            }
-            h1 {
-                font-size: 3rem;
-            }
-            h2 {
-                font-size: 2.2rem;
-            }
-            section {
-                padding: 4rem 0;
-            }
-            .hero-content {
-                text-align: center;
-            }
-            .quote-item p {
-                font-size: 1.3rem;
-            }
-            .service-card, .location-card, .contact-form-container {
-                padding: 2rem;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Dancing+Script:wght@400;600&family=Cinzel:wght@400;600;700&family=Montserrat:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>/*---
+* VERA GENERATOR STYLES - MASTER EDITION
+* Palette: royal | Layout: asymmetric | Typography: elegant
+---*/
+:root {
+    --color-primary: #4a2c6d;
+    --color-background-light: #f5f0ff;
+    --color-background-dark: #2d1b4e;
+    --color-accent: #b19cd9;
+    --color-text-light: #d4c5ed;
+    --gradient-primary: linear-gradient(135deg, #4a2c6d 0%, #b19cd9 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.8;
+    color: var(--color-primary);
+    background-color: var(--color-background-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-primary);
+}
+
+h1 { 
+    font-size: 4.2rem; 
+    margin-bottom: 1.5rem; 
+    letter-spacing: 1px;
+    
+}
+
+h2 { 
+    font-size: 3.2rem; 
+    margin-bottom: 1.8rem; 
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--color-accent);
+}
+
+h3 { 
+    font-size: 2.2rem; 
+    margin-bottom: 1.2rem; 
+}
+
+p { 
+    margin-bottom: 1.5rem; 
+    color: var(--color-primary); 
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.nav-link:hover, .nav-link.active { 
+    color: var(--color-accent); 
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link.active::after, .nav-link:hover::after { 
+    width: 100%; 
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-background-light) 0%, #ebebeb 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(192, 160, 104, 0.03)" stroke-width="1"/></svg>');
+    opacity: 0.5;
+}
+
+.hero-content {
+    text-align: center;
+    padding: 8rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-philosophy {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color-accent);
+    margin-top: 0.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: #666;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 18px 45px;
+    background: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.cta-button:hover:before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    background: var(--color-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(192, 160, 104, 0.3);
+}
+
+section { 
+    padding: 8rem 0; 
+    position: relative;
+}
+
+.section-title { 
+    text-align: center; 
+    font-size: 3.2rem; 
+    margin-bottom: 1.5rem; 
+    width: 100%;
+}
+
+.section-subtitle { 
+    text-align: center; 
+    font-size: 1.2rem; 
+    color: #666; 
+    margin-bottom: 4rem; 
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-content { 
+    display: grid; 
+    gap: 3rem; 
+}
+
+/* Enhanced Layout Styles */
+
+.about .section-content {
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+}
+.services .section-content {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.contact .section-content {
+    grid-template-columns: 1fr 1.5fr;
+    align-items: start;
+    gap: 4rem;
+}
+
+
+/* Section-specific styles */
+.about { 
+    background: #fff; 
+}
+
+.services { 
+    background: var(--color-background-light); 
+}
+
+.portfolio {
+    background: #fff;
+}
+
+.testimonials {
+    background: var(--color-background-light);
+}
+
+.locations {
+    background: #fff;
+}
+
+.contact { 
+    background: var(--color-primary); 
+    color: #fff; 
+}
+
+.contact p { 
+    color: var(--color-text-light); 
+}
+
+.contact h2, .contact h3 { 
+    color: #fff; 
+}
+
+.contact .section-subtitle { 
+    color: var(--color-text-light); 
+}
+
+/* Horizontal Scroll Gallery Styles */
+.gallery-container {
+    position: relative;
+    margin: 3rem 0;
+}
+
+.gallery-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.gallery-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    padding: 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.gallery-nav:hover {
+    opacity: 1;
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav.prev {
+    left: 20px;
+}
+
+.gallery-nav.next {
+    right: 20px;
+}
+
+.gallery-nav i {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}
+
+.gallery-counter {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Enhanced Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background: rgba(255,255,255,0.15);
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+/* Enhanced service cards */
+.service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-title { font-size: 3.5rem; }
+    .about-content, .contact-content { grid-template-columns: 1fr; gap: 3rem; }
+    .about-text, .quote-box { text-align: center; }
+    .quote-box { padding: 2rem; }
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.8rem; }
+    .gallery-item {
+        width: 350px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu { display: none; }
+    .container { padding: 0 20px; }
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+    section { padding: 5rem 0; }
+    .hero-content { text-align: center; padding: 6rem 0; }
+    .about-content, .contact-content { grid-template-columns: 1fr; }
+    .services .section-content, .locations .section-content { grid-template-columns: 1fr; }
+    .service-card { padding: 2rem; }
+    .gallery-item {
+        width: 300px;
+        height: 225px;
+    }
+    .gallery-nav {
+        width: 40px;
+        height: 40px;
+    }
+    .gallery-nav.prev {
+        left: 10px;
+    }
+    .gallery-nav.next {
+        right: 10px;
+    }
+}</style>
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-container">
+        <div class="nav-container container">
             <div class="logo">VERA</div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">The Atelier</a></li>
-                <li><a href="#services" class="nav-link">Creations</a></li>
-                <li><a href="#locations" class="nav-link">Locations</a></li>
-                <li><a href="#contact" class="nav-link">Connect</a></li>
+                <li><a href="#home" class="nav-link active">Home</a></li><li><a href="#about" class="nav-link">The Atelier</a></li><li><a href="#services" class="nav-link">Creations</a></li><li><a href="#portfolio" class="nav-link">Portfolio</a></li><li><a href="#contact" class="nav-link">Connect</a></li>
             </ul>
         </div>
     </nav>
-
+    
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Visual Direction & Fine Art Portraiture</h1>
+                <h1 class="hero-title">Atelier of Visual Mastery</h1>
                 <p class="brand-philosophy">Visual Elegance and Refined Aesthetics</p>
-                <p class="hero-subtitle">The confluence of haute couture, cinematic heritage, and minimalist form.</p>
+                <p class="hero-subtitle">The confluence of haute couture, cinematic heritage, and minimalist form—where every pixel is purposeful and every composition tells a story.</p>
                 <div class="hero-cta">
                     <a href="#services" class="cta-button">Explore The Art</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">The VERA Atelier</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="lead">An <em>artiste visuel</em> with an atelier’s eye for minimalism and a penchant for clean, elegant compositions. The work is deeply rooted in the worlds of haute couture and the delicate essence of fine art photography.</p>
-                    <p>Drawing inspiration from masters like Edward Weston's sculptural forms and Helmut Newton's powerful fashion imagery, my approach combines classical composition with a contemporary, refined minimalism. Each piece is a philosophical exploration of form, light, and narrative.</p>
-                </div>
-                <div class="quote-box">
-                    <blockquote class="quote-item">
-                        <p>"L'art de capturer l'âme"</p>
-                        <cite>— The VERA Philosophy</cite>
-                    </blockquote>
-                    <div class="quote-divider"></div>
-                    <blockquote class="quote-item">
-                        <p>"Cinema is the most beautiful fraud in the world."</p>
-                        <cite>— Jean-Luc Godard</cite>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Creative Creations</h2>
-            <p class="section-subtitle">A curated collection of visual storytelling, designed to transcend the ordinary.</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Fine Art Portraits</h3>
-                    <p>For collectors and individuals seeking gallery-worthy images that explore the intersection of form, soul, and legacy. Each portrait is a timeless investment in personal narrative.</p>
-                    <ul>
-                        <li>Focus on sculptural lighting and emotive composition.</li>
-                        <li>Transcendental portraiture as a fine art form.</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Music & Album Art</h3>
-                    <p>Translating the sonic landscape into a compelling visual narrative. These are not just images, but cinematic extensions of a musician's unique sound and identity.</p>
-                    <ul>
-                        <li>Visuals that resonate with the artist's sound.</li>
-                        <li>Development of iconic, era-defining imagery.</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Glamour & Fashion</h3>
-                    <p>Sophisticated, modern imagery with a high-fashion sensibility. Our approach is to tell a story through elegant compositions and a clean, minimalist aesthetic.</p>
-                    <ul>
-                        <li>High-fashion narrative with contemporary elegance.</li>
-                        <li>Focus on clean lines and powerful, timeless forms.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="locations" class="locations">
-        <div class="container">
-            <h2 class="section-title">Premium Locations</h2>
-            <p class="section-subtitle">A curated selection of exclusive venues for extraordinary photography.</p>
-            
-            <div class="locations-grid">
-                <div class="location-card">
-                    <h3>Novotel Hyderabad</h3>
-                    <p class="location-type">Luxury Hotel Suite</p>
-                    <p>Contemporary luxury with sophisticated interiors, perfect for high-end fashion and artistic photography with a modern feel.</p>
-                </div>
-                <div class="location-card">
-                    <h3>Taj Krishna</h3>
-                    <p class="location-type">Palace Collection</p>
-                    <p>Elegant colonial architecture with rich, sophisticated interiors, ideal for classic portraiture and timeless fashion sessions.</p>
-                </div>
-                <div class="location-card">
-                    <h3>Hyderabad Exclusives</h3>
-                    <p class="location-type">Premium Collection</p>
-                    <p>A collection of modern metropolitan backdrops and luxury resorts that showcase the city's finest and most unique locales.</p>
-                    <ul class="location-venues">
-                        <li>Radisson Blu Plaza</li>
-                        <li>The Park Hyderabad</li>
-                        <li>ITC Kakatiya</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Begin the Conversation</h2>
-            <p class="section-subtitle">Reach out to discuss your creative project.</p>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>A Creative Dialogue</h3>
-                    <p>Whether for a personal project or a commercial collaboration, we value unique visions and a commitment to creating exceptional work. We invite you to begin a conversation about your next creative endeavor.</p>
-                    <div class="booking-note">
-                        <h4>Our Commitment</h4>
-                        <p>We provide full creative direction, styling, and a seamless production experience to bring your ideas into reality. The process begins with a creative consultation to understand your vision.</p>
-                    </div>
-                </div>
-                <div class="contact-form-container">
-                    <form class="contact-form">
-                        <input type="text" name="name" placeholder="Your Full Name" required>
-                        <input type="email" name="email" placeholder="Email Address" required>
-                        <textarea name="message" placeholder="Tell us about your project, your vision, and your inspiration..." rows="5" required></textarea>
-                        <button type="submit" class="cta-button">Send Inquiry</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
+    
+    
+                    <section id="about" class="about">
+                        <div class="container">
+                            <h2 class="section-title">The VERA Atelier</h2>
+                            <p class="section-subtitle">Where visual poetry meets technical precision in a symphony of aesthetic excellence</p>
+                            <div class="section-content about-content">
+                                <div>
+                                    <p>As a <em>maestro of visual narrative</em>, my work transcends mere photography to become a dialogue between light, form, and emotion. Each composition is meticulously crafted with an atelier's dedication to detail, drawing inspiration from the golden ratio's mathematical perfection and the emotional resonance of Renaissance masters.</p>
+                                    <p>My philosophy merges the disciplined elegance of Japanese wabi-sabi with the bold vision of contemporary European aesthetics. The result is a visual language that speaks to both the conscious and subconscious, creating imagery that doesn't just capture moments but etches memories into the fabric of perception.</p>
+                                </div>
+                                <div class="quote-box" style="background: rgba(192, 160, 104, 0.05); padding: 2rem; border-radius: 10px; border-left: 4px solid var(--color-accent);">
+                                    <h3 style="font-family: 'Dancing Script', cursive; color: var(--color-accent);">"L'art de capturer l'âme"</h3>
+                                    <p style="font-style: italic; color: #666;">— The VERA Philosophy: Capturing not just images, but the essence within</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="services" class="services">
+                        <div class="container">
+                            <h2 class="section-title">Creative Commissions</h2>
+                            <p class="section-subtitle">A curated collection of visual storytelling, designed to transcend the ordinary and embrace the extraordinary</p>
+                            <div class="section-content services-grid">
+                                <div class="service-card">
+                                    <h3><i class="fas fa-palette" style="margin-right: 10px;"></i> Fine Art Portraits</h3>
+                                    <p>For collectors and visionaries seeking gallery-worthy imagery that explores the intersection of form, soul, and legacy. Each portrait becomes a timeless investment in personal narrative, crafted with the precision of a master painter and the vision of a contemporary artist.</p>
+                                </div>
+                                <div class="service-card">
+                                    <h3><i class="fas fa-music" style="margin-right: 10px;"></i> Music & Album Art</h3>
+                                    <p>Translating the sonic landscape into compelling visual narratives. These are not mere images but cinematic extensions of a musician's unique identity, creating visual harmonies that resonate with the auditory experience.</p>
+                                </div>
+                                <div class="service-card">
+                                    <h3><i class="fas fa-tshirt" style="margin-right: 10px;"></i> Glamour & Fashion</h3>
+                                    <p>Sophisticated, modern imagery with a haute couture sensibility. Our approach weaves stories through elegant compositions and a minimalist aesthetic that highlights the artistry of design and the beauty of form.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="portfolio" class="portfolio">
+                        <div class="container">
+                            <h2 class="section-title">Portfolio Gallery</h2>
+                            <p class="section-subtitle">A visual journey through moments of captured elegance and narrative depth</p>
+                            <div class="gallery-container">
+                                <button class="gallery-nav prev">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="gallery-nav next">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                                <div class="gallery-scroll" id="gallery-scroll">
+                                    <!-- Images will be dynamically loaded here -->
+                                </div>
+                                <div class="gallery-counter" id="gallery-counter">Loading images...</div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="contact" class="contact">
+                        <div class="container">
+                            <h2 class="section-title">Begin the Conversation</h2>
+                            <p class="section-subtitle">Your vision deserves a canvas. Let's collaborate to create something extraordinary.</p>
+                            <div class="section-content contact-content">
+                                <div class="contact-info">
+                                    <h3>A Creative Dialogue</h3>
+                                    <p>Whether for a personal project or a commercial collaboration, we value unique visions and a commitment to creating exceptional work. The process begins with a creative consultation to understand your aesthetic, narrative, and aspirations.</p>
+                                    <div class="booking-note" style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                                        <h4>Our Commitment</h4>
+                                        <p>We provide full creative direction, styling, and a seamless production experience to bring your ideas into reality. From concept to final delivery, every detail is meticulously crafted to exceed expectations.</p>
+                                    </div>
+                                </div>
+                                <div class="contact-form-container">
+                                    <form class="contact-form">
+                                        <input type="text" name="name" placeholder="Your Full Name" required>
+                                        <input type="email" name="email" placeholder="Email Address" required>
+                                        <input type="text" name="subject" placeholder="Project Nature" required>
+                                        <textarea name="message" placeholder="Tell us about your project, your vision, and your inspiration..." rows="5" required></textarea>
+                                        <button type="submit" class="cta-button">Send Inquiry</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+    
+    <footer class="footer" style="background: var(--color-background-dark); color: white; padding: 3rem 0; text-align: center;">
         <div class="container">
             <p>&copy; 2024 VERA. All rights reserved. | Visual Direction & Fine Art</p>
+            <p style="margin-top: 1rem; color: var(--color-text-light); font-size: 0.9rem;">Crafted with precision and passion</p>
         </div>
     </footer>
     
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-        // Smooth scrolling navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            // Navigation links smooth scrolling
-            const navLinks = document.querySelectorAll('.nav-link');
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Dynamic image loading for gallery
+        function loadGalleryImages() {
+            const galleryScroll = document.getElementById('gallery-scroll');
+            const galleryCounter = document.getElementById('gallery-counter');
             
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Remove active class from all links
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    
-                    // Add active class to clicked link
-                    this.classList.add('active');
-                    
-                    // Get target section
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        // Smooth scroll to target
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // Update active navigation on scroll
-            window.addEventListener('scroll', function() {
-                const sections = document.querySelectorAll('section');
-                const scrollPos = window.scrollY + 100;
-
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.offsetHeight;
-                    const sectionId = section.getAttribute('id');
-                    const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                        navLinks.forEach(link => link.classList.remove('active'));
-                        if (correspondingLink) {
-                            correspondingLink.classList.add('active');
-                        }
-                    }
-                });
-            });
-
-            // EmailJS Configuration
-            // IMPORTANT: Replace with your EmailJS public key, service ID, and template ID
-            emailjs.init("ooggSqM8FuBbgaqIE"); // Replace with your EmailJS public key
+            if (!galleryScroll) return;
             
-            // Form handling with EmailJS
-            const contactForm = document.querySelector('.contact-form form');
+            // List of common image extensions
+            const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp'];
             
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
+            // Function to try loading an image
+            function tryImageLoad(imageName, index) {
+                const img = new Image();
+                img.onload = function() {
+                    // Create gallery item for successfully loaded image
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
                     
-                    // Basic form validation
-                    const inputs = this.querySelectorAll('input[required], select[required], textarea[required]');
-                    let isValid = true;
+                    const galleryImage = document.createElement('img');
+                    galleryImage.src = 'images/' + imageName;
+                    galleryImage.alt = 'Portfolio image ' + (index + 1);
+                    galleryImage.className = 'gallery-image';
                     
-                    inputs.forEach(input => {
-                        if (!input.value.trim()) {
-                            isValid = false;
-                            input.style.borderColor = '#ff6b6b';
-                            
-                            // Reset border color after 3 seconds
-                            setTimeout(() => {
-                                input.style.borderColor = '#ddd';
-                            }, 3000);
-                        } else {
-                            input.style.borderColor = '#d4af37';
-                        }
+                    const galleryOverlay = document.createElement('div');
+                    galleryOverlay.className = 'gallery-overlay';
+                    galleryOverlay.innerHTML = `
+                        <h3>Visual Art ${index + 1}</h3>
+                        <p>Capturing moments of elegance and narrative depth</p>
+                    `;
+                    
+                    galleryItem.appendChild(galleryImage);
+                    galleryItem.appendChild(galleryOverlay);
+                    galleryScroll.appendChild(galleryItem);
+                    
+                    // Update counter
+                    updateGalleryCounter();
+                };
+                
+                img.onerror = function() {
+                    // Image failed to load, try next extension if available
+                    console.log('Failed to load: ' + imageName);
+                };
+                
+                img.src = 'images/' + imageName;
+            }
+            
+            // Try to load images with different naming patterns
+            // First try a generic pattern that might match common naming conventions
+            for (let i = 1; i <= 20; i++) {
+                // Try different naming patterns
+                const patterns = [
+                    `image${i}.${ext}`,
+                    `img${i}.${ext}`,
+                    `photo${i}.${ext}`,
+                    `pic${i}.${ext}`,
+                    `gallery${i}.${ext}`,
+                    `portfolio${i}.${ext}`,
+                    `art${i}.${ext}`,
+                    `work${i}.${ext}`
+                ];
+                
+                patterns.forEach(pattern => {
+                    imageExtensions.forEach(ext => {
+                        tryImageLoad(pattern.replace('${ext}', ext), i-1);
                     });
-                    
-                    if (isValid) {
-                        // Get form data
-                        const formData = new FormData(this);
-                        const templateParams = {
-                            from_name: formData.get('name') || this.querySelector('input[type="text"]').value,
-                            from_email: formData.get('email') || this.querySelector('input[type="email"]').value,
-                            message: formData.get('message') || this.querySelector('textarea').value,
-                            to_email: 'srivonx@gmail.com'
-                        };
-                        
-                        const submitButton = this.querySelector('.cta-button');
-                        const originalText = submitButton.textContent;
-                        
-                        // Update button state
-                        submitButton.textContent = 'Sending...';
-                        submitButton.style.background = '#d4af37';
-                        submitButton.disabled = true;
-                        
-                        // Send email using EmailJS
-                        emailjs.send('service_qxkm6rj', 'template_akkwkkr', templateParams) // Replace with your Service ID and Template ID
-                            .then(function(response) {
-                                console.log('Email sent successfully!', response.status, response.text);
-                                
-                                // Success feedback
-                                submitButton.textContent = 'Message Sent!';
-                                submitButton.style.background = '#28a745';
-                                
-                                // Reset form after success
-                                setTimeout(() => {
-                                    submitButton.textContent = originalText;
-                                    submitButton.style.background = '#333';
-                                    submitButton.disabled = false;
-                                    contactForm.reset();
-                                    
-                                    // Reset all border colors
-                                    inputs.forEach(input => {
-                                        input.style.borderColor = '#ddd';
-                                    });
-                                }, 2500);
-                                
-                            }, function(error) {
-                                console.error('EmailJS Error:', error);
-                                
-                                // Error feedback
-                                submitButton.textContent = 'Error - Try Again';
-                                submitButton.style.background = '#ff6b6b';
-                                
-                                // Reset button after error
-                                setTimeout(() => {
-                                    submitButton.textContent = originalText;
-                                    submitButton.style.background = '#333';
-                                    submitButton.disabled = false;
-                                }, 3000);
-                            });
-                    }
                 });
             }
+            
+            // Update gallery counter
+            function updateGalleryCounter() {
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                if (galleryCounter && galleryItems.length > 0) {
+                    galleryCounter.textContent = `1 / ${galleryItems.length}`;
+                } else if (galleryCounter) {
+                    galleryCounter.textContent = 'No images found';
+                }
+            }
+            
+            // Initialize gallery navigation after images are loaded
+            setTimeout(initializeGalleryNavigation, 1000);
+        }
+        
+        // Initialize gallery navigation
+        function initializeGalleryNavigation() {
+            const galleryScroll = document.getElementById('gallery-scroll');
+            const galleryCounter = document.getElementById('gallery-counter');
+            const prevButton = document.querySelector('.gallery-nav.prev');
+            const nextButton = document.querySelector('.gallery-nav.next');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            if (galleryScroll && galleryItems.length > 0) {
+                const itemWidth = galleryItems[0].offsetWidth + 24; // width + gap
+                let currentIndex = 0;
+                
+                function updateGalleryCounter() {
+                    if (galleryCounter) {
+                        galleryCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+                    }
+                }
+                
+                function scrollToIndex(index) {
+                    if (index >= 0 && index < galleryItems.length) {
+                        currentIndex = index;
+                        galleryScroll.scrollTo({
+                            left: index * itemWidth,
+                            behavior: 'smooth'
+                        });
+                        updateGalleryCounter();
+                    }
+                }
+                
+                if (prevButton) {
+                    prevButton.addEventListener('click', function() {
+                        scrollToIndex(currentIndex - 1);
+                    });
+                }
+                
+                if (nextButton) {
+                    nextButton.addEventListener('click', function() {
+                        scrollToIndex(currentIndex + 1);
+                    });
+                }
+                
+                // Update counter on scroll
+                galleryScroll.addEventListener('scroll', function() {
+                    const scrollPos = galleryScroll.scrollLeft;
+                    currentIndex = Math.round(scrollPos / itemWidth);
+                    updateGalleryCounter();
+                });
+                
+                updateGalleryCounter();
+            }
+        }
+        
+        // Load gallery images when DOM is ready
+        loadGalleryImages();
+
+        // Smooth scrolling for navigation links
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
         });
-    </script>
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+            
+            // Update active nav link based on scroll position
+            const sections = document.querySelectorAll('section');
+            const scrollPos = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    if (correspondingLink) {
+                        correspondingLink.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // EmailJS integration for contact form
+        emailjs.init("ooggSqM8FuBbgaqIE");
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const inputs = this.querySelectorAll('input[required], textarea[required]');
+                let isValid = true;
+                
+                // Validate form
+                inputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        input.style.borderColor = '#ff6b6b';
+                        setTimeout(() => { input.style.borderColor = 'rgba(255,255,255,0.2)'; }, 3000);
+                    } else {
+                        input.style.borderColor = 'var(--color-accent)';
+                    }
+                });
+                
+                if (isValid) {
+                    const formData = new FormData(this);
+                    const templateParams = {
+                        from_name: formData.get('name'),
+                        from_email: formData.get('email'),
+                        subject: formData.get('subject'),
+                        message: formData.get('message'),
+                        to_email: 'srivonx@gmail.com'
+                    };
+                    
+                    const submitButton = this.querySelector('.cta-button');
+                    const originalText = submitButton.textContent;
+                    
+                    submitButton.textContent = 'Sending...';
+                    submitButton.style.background = 'var(--color-accent)';
+                    submitButton.disabled = true;
+                    
+                    emailjs.send('service_qxkm6rj', 'template_akkwkkr', templateParams)
+                        .then(function(response) {
+                            console.log('Email sent successfully!', response.status, response.text);
+                            submitButton.textContent = 'Message Sent!';
+                            submitButton.style.background = '#28a745';
+                            
+                            setTimeout(() => {
+                                submitButton.textContent = originalText;
+                                submitButton.style.background = '';
+                                submitButton.disabled = false;
+                                contactForm.reset();
+                                inputs.forEach(input => { 
+                                    input.style.borderColor = 'rgba(255,255,255,0.2)'; 
+                                });
+                            }, 2500);
+                        }, function(error) {
+                            console.error('EmailJS Error:', error);
+                            submitButton.textContent = 'Error - Try Again';
+                            submitButton.style.background = '#ff6b6b';
+                            
+                            setTimeout(() => {
+                                submitButton.textContent = originalText;
+                                submitButton.style.background = '';
+                                submitButton.disabled = false;
+                            }, 3000);
+                        });
+                }
+            });
+        }
+        
+        // Add subtle animations to elements on scroll
+        
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.service-card, .section-title, .contact-form, .gallery-item');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = "1";
+                    element.style.transform = "translateY(0)";
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        window.addEventListener('load', function() {
+            const elementsToAnimate = document.querySelectorAll('.service-card, .section-title, .contact-form, .gallery-item');
+            elementsToAnimate.forEach(el => {
+                el.style.opacity = "0";
+                el.style.transform = "translateY(20px)";
+                el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            });
+            
+            animateOnScroll();
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        
+    });
+</script>
 </body>
 </html>
